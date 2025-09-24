@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Navette Phoenix</string>
+    <string name="welcome_title">Bienvenue à bord de la Navette Phoenix</string>
+    <string name="next_departure_title">Prochain départ</string>
+    <string name="next_departure_format">Départ à %1$s depuis %2$s vers %3$s · %4$d places disponibles</string>
+    <string name="status_loading">Mise à jour des informations...</string>
+    <string name="status_ready">Navette prête pour l&#39;embarquement</string>
+    <string name="status_reservation_confirmed">Réservation confirmée</string>
+    <string name="action_reserve">Réserver un trajet</string>
+    <string name="action_view_schedule">Consulter les horaires</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="message_reservation">Votre demande de réservation a été transmise.</string>
+    <string name="message_schedule">Les horaires complets sont disponibles dans l&#39;application partenaire.</string>
+    <string name="message_notifications">Aucune nouvelle notification.</string>
+    <string name="content_description_logo">Logo Navette Phoenix</string>
+</resources>
