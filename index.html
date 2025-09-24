@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navette Phoenix – Transport à la Demande</title>
+  <meta
+    name="description"
+    content="Réservez votre navette à la demande dans les communautés Terre de Perche et Forêt du Perche. Tarif fixe de 5 € par personne, 4 places maximum."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha512-v7bU1Cq7G8zDeihh5Z8SGvtQvECOH14R/2uOeGjn5ER5YjZL+QkNo4fU6CWPG6lzQIsLMgIp2GDa3hWkC5xg8g==" crossorigin="" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="branding">
+        <img
+          src="https://www.navettephoenix.fr/wp-content/uploads/2023/07/cropped-logo-navette-phoenix-2.png"
+          alt="Logo Navette Phoenix"
+          class="logo"
+        />
+        <div>
+          <p class="app-name">Navette Phoenix</p>
+          <p class="app-tagline">Votre mobilité en milieu rural, simplifiée.</p>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#reservation">Réserver TAD</a>
+        <a href="#devis">Devis hors secteur</a>
+        <a href="#infos">Infos pratiques</a>
+        <a href="#comparateur">Comparateur</a>
+        <a href="#contact">Contacts</a>
+        <a href="#sos" class="nav-alert">SOS 112</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="app-hero" id="top">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <h1>Votre navette locale, rapide et fiable</h1>
+          <p>
+            Transport à la demande dans les communautés de communes
+            <strong>Terre de Perche</strong> et <strong>Forêt du Perche</strong>. Tarif unique de
+            <strong>5 € par personne</strong>, jusqu’à 4 passagers.
+          </p>
+          <div class="quick-actions" role="list">
+            <a class="quick-action" href="#reservation" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 16l3.2-8h9.4a1.4 1.4 0 011.35 1.74l-1.4 5.6A1.4 1.4 0 0116.2 16H5z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="7.5" cy="19" r="1.5" fill="currentColor" />
+                  <circle cx="16.5" cy="19" r="1.5" fill="currentColor" />
+                </svg>
+              </span>
+              <span class="quick-label">Réserver TAD</span>
+            </a>
+            <a class="quick-action" href="#devis" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 3h9l3 3v13a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M9 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M9 9h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="quick-label">Devis hors secteur</span>
+            </a>
+            <a class="quick-action" href="#contact" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 5a2 2 0 012-2h1.3a1 1 0 01.93.66l1.24 3.71a1 1 0 01-.43 1.17l-1.66 1.1a12.05 12.05 0 006.6 6.6l1.1-1.66a1 1 0 011.17-.43l3.71 1.24a1 1 0 01.66.93V18a2 2 0 01-2 2h-1C9.82 20 4 14.18 4 7V5z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="quick-label">Contact</span>
+            </a>
+            <a class="quick-action" href="privacy.html" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 4h12l3 3v13a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M9 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M9 8h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="quick-label">Politique</span>
+            </a>
+            <a class="quick-action quick-action--alert" href="#sos" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 4l8 16H4l8-16z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="12" cy="17" r="1" fill="currentColor" />
+                  <path d="M12 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="quick-label">SOS 112</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-map-card" aria-label="Carte des zones desservies">
+          <iframe
+            title="Carte des communautés Terre et Forêt du Perche"
+            src="https://www.google.com/maps/d/embed?mid=1YHSYqZgyE3lPmMVojWa3FzaAmZ-Ci_E&ehbc=2E312F"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="infos" class="section section-alt">
+      <div class="container info-grid">
+        <article class="info-card">
+          <h2>Fonctionnement du TAD</h2>
+          <p>
+            Trajets sur réservation du lundi au samedi, 9h–19h. Vous choisissez l’heure souhaitée et un conseiller confirme la prise
+            en charge.
+          </p>
+          <ul>
+            <li>Tarif fixe : 5&nbsp;€ par personne</li>
+            <li>Maximum 4 passagers par navette</li>
+            <li>Réservation minimum la veille pour garantir la disponibilité</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h2>Horaires &amp; zones desservies</h2>
+          <p>Communautés de communes couvertes :</p>
+          <ul>
+            <li><strong>Terre de Perche</strong></li>
+            <li><strong>Forêt du Perche</strong></li>
+          </ul>
+          <p>Nous relions gares, centres-bourgs, établissements de santé et services publics des territoires.</p>
+        </article>
+        <article class="info-card">
+          <h2>Contacts clés</h2>
+          <p>Une équipe locale vous accompagne pour toute question ou demande spécifique.</p>
+          <ul class="info-contacts">
+            <li><strong>Réservations :</strong> <a href="tel:+33652758286">06&nbsp;52&nbsp;75&nbsp;82&nbsp;86</a></li>
+            <li><strong>Informations :</strong> <a href="tel:+33685704336">06&nbsp;85&nbsp;70&nbsp;43&nbsp;36</a></li>
+            <li><strong>E-mail TAD :</strong> <a href="mailto:caro.resanavettephoenix@gmail.com">caro.resanavettephoenix@gmail.com</a></li>
+            <li><strong>Réclamations :</strong> <a href="mailto:Phoenix.lts28@navettephoenix.fr">Phoenix.lts28@navettephoenix.fr</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="reservation" class="section section-alt">
+      <div class="container">
+        <h2>Réservation Transport à la Demande (TAD)</h2>
+        <p>Remplissez les informations ci-dessous. Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
+        <div class="form-layout">
+          <form id="tad-form" class="form" novalidate>
+            <div class="form-field">
+              <input type="text" id="tad-firstname" name="firstname" placeholder=" " required autocomplete="given-name" />
+              <label for="tad-firstname">Prénom *</label>
+              <p class="error" data-error-for="tad-firstname"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="tad-lastname" name="lastname" placeholder=" " required autocomplete="family-name" />
+              <label for="tad-lastname">Nom *</label>
+              <p class="error" data-error-for="tad-lastname"></p>
+            </div>
+            <div class="form-field">
+              <input
+                type="tel"
+                id="tad-phone"
+                name="phone"
+                placeholder=" "
+                required
+                inputmode="tel"
+                pattern="^(\\+33|0)[1-9](?:[ .-]?\\d{2}){4}$"
+              />
+              <label for="tad-phone">Téléphone *</label>
+              <p class="error" data-error-for="tad-phone"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="tad-pickup" name="pickup" placeholder=" " required autocomplete="address-line1" />
+              <label for="tad-pickup">Adresse de prise en charge *</label>
+              <p class="error" data-error-for="tad-pickup"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="tad-dropoff" name="dropoff" placeholder=" " required autocomplete="address-line2" />
+              <label for="tad-dropoff">Adresse de dépose *</label>
+              <p class="error" data-error-for="tad-dropoff"></p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field select-field">
+                <label for="tad-date">Date *</label>
+                <input type="date" id="tad-date" name="date" required />
+                <p class="error" data-error-for="tad-date"></p>
+              </div>
+              <div class="form-field select-field">
+                <label for="tad-time">Heure *</label>
+                <input type="time" id="tad-time" name="time" required />
+                <p class="error" data-error-for="tad-time"></p>
+              </div>
+              <div class="form-field select-field">
+                <label for="tad-passengers">Nombre de passagers *</label>
+                <select id="tad-passengers" name="passengers" required>
+                  <option value="" disabled selected>Choisissez</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <p class="error" data-error-for="tad-passengers"></p>
+              </div>
+            </div>
+            <div class="total" aria-live="polite">
+              <span>Total estimé :</span>
+              <strong id="tad-total">0 €</strong>
+            </div>
+            <button type="submit" class="btn btn-full" data-loading-text="Envoi en cours…">
+              <span class="btn-label">Envoyer la réservation</span>
+            </button>
+            <p class="form-footnote">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
+          </form>
+          <div class="form-map-card" aria-label="Carte des prises en charge Navette Phoenix">
+            <iframe
+              title="Carte des zones Navette Phoenix"
+              src="https://www.google.com/maps/d/embed?mid=1YHSYqZgyE3lPmMVojWa3FzaAmZ-Ci_E&ehbc=2E312F"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comparateur" class="section">
+      <div class="container">
+        <h2>Comparer votre temps de trajet</h2>
+        <p>
+          Saisissez votre point de départ et d’arrivée pour estimer la durée en navette Navette Phoenix et en voiture personnelle.
+          Les temps sont donnés à titre indicatif.
+        </p>
+        <div class="compare-grid">
+          <form id="compare-form" class="form" novalidate>
+            <div class="form-field">
+              <input type="text" id="compare-pickup" name="compare_pickup" placeholder=" " required />
+              <label for="compare-pickup">Adresse de prise en charge *</label>
+              <p class="error" data-error-for="compare-pickup"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="compare-dropoff" name="compare_dropoff" placeholder=" " required />
+              <label for="compare-dropoff">Adresse de dépose *</label>
+              <p class="error" data-error-for="compare-dropoff"></p>
+            </div>
+            <button type="button" class="btn btn-ghost" id="compare-use-location" data-loading-text="Localisation…">
+              <span class="btn-label">Utiliser ma position</span>
+            </button>
+            <button type="submit" class="btn btn-full" data-loading-text="Calcul en cours…">
+              <span class="btn-label">Calculer le trajet</span>
+            </button>
+            <p class="form-footnote">Temps indicatifs basés sur des données routières ouvertes (OSM/OSRM).</p>
+          </form>
+          <div class="map-panel">
+            <div id="compare-map" aria-label="Carte de comparaison des trajets"></div>
+            <div class="compare-results" aria-live="polite">
+              <div>
+                <span class="result-label">Distance totale</span>
+                <strong id="result-distance">—</strong>
+              </div>
+              <div>
+                <span class="result-label">Temps estimé navette</span>
+                <strong id="result-shuttle">—</strong>
+              </div>
+              <div>
+                <span class="result-label">Temps estimé voiture</span>
+                <strong id="result-car">—</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="devis" class="section">
+      <div class="container">
+        <h2>Devis hors secteur — Gare, Aéroport, Paris, toute la France</h2>
+        <p>Pour vos trajets longue distance, indiquez-nous vos besoins. Nous vous recontactons rapidement avec une proposition personnalisée.</p>
+        <div class="form-layout">
+          <form id="devis-form" class="form" novalidate>
+            <div class="form-field">
+              <input type="text" id="quote-name" name="name" placeholder=" " required autocomplete="name" />
+              <label for="quote-name">Nom et prénom *</label>
+              <p class="error" data-error-for="quote-name"></p>
+            </div>
+            <div class="form-field">
+              <input
+                type="tel"
+                id="quote-phone"
+                name="phone"
+                placeholder=" "
+                required
+                inputmode="tel"
+                pattern="^(\\+33|0)[1-9](?:[ .-]?\\d{2}){4}$"
+              />
+              <label for="quote-phone">Téléphone *</label>
+              <p class="error" data-error-for="quote-phone"></p>
+            </div>
+            <div class="form-field">
+              <input type="email" id="quote-email" name="email" placeholder=" " required autocomplete="email" />
+              <label for="quote-email">E-mail *</label>
+              <p class="error" data-error-for="quote-email"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="quote-pickup" name="pickup" placeholder=" " required />
+              <label for="quote-pickup">Adresse de prise en charge *</label>
+              <p class="error" data-error-for="quote-pickup"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="quote-dropoff" name="dropoff" placeholder=" " required />
+              <label for="quote-dropoff">Adresse de dépose *</label>
+              <p class="error" data-error-for="quote-dropoff"></p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field select-field">
+                <label for="quote-date">Date *</label>
+                <input type="date" id="quote-date" name="date" required />
+                <p class="error" data-error-for="quote-date"></p>
+              </div>
+              <div class="form-field select-field">
+                <label for="quote-time">Heure *</label>
+                <input type="time" id="quote-time" name="time" required />
+                <p class="error" data-error-for="quote-time"></p>
+              </div>
+            </div>
+            <fieldset class="segmented">
+              <legend>Type de trajet *</legend>
+              <div class="segment-group" role="radiogroup" aria-required="true">
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Gare" required />
+                  <span>Gare</span>
+                </label>
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Aéroport" />
+                  <span>Aéroport</span>
+                </label>
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Paris" />
+                  <span>Paris</span>
+                </label>
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Toute la France" />
+                  <span>Toute la France</span>
+                </label>
+              </div>
+              <p class="error" data-error-for="trip_type"></p>
+            </fieldset>
+            <button type="submit" class="btn btn-full" data-loading-text="Envoi en cours…">
+              <span class="btn-label">Demander un devis</span>
+            </button>
+            <p class="form-footnote">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
+          </form>
+          <div class="form-map-card" aria-label="Carte de calcul des trajets longue distance">
+            <iframe
+              title="Carte hors secteur Navette Phoenix"
+              src="https://www.google.com/maps/d/embed?mid=1YHSYqZgyE3lPmMVojWa3FzaAmZ-Ci_E&ehbc=2E312F"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="engagements">
+      <div class="container grid grid-3">
+        <article class="card">
+          <h3>Suivi personnalisé</h3>
+          <p>Notifications SMS ou téléphone selon votre préférence pour confirmer et rappeler vos trajets.</p>
+        </article>
+        <article class="card">
+          <h3>Accessibilité</h3>
+          <p>Formulaires accessibles, contraste élevé et optimisés pour tous les smartphones Android modernes.</p>
+        </article>
+        <article class="card">
+          <h3>Réactivité</h3>
+          <p>Équipe locale disponible du lundi au samedi, 9h–19h, pour vos demandes et réclamations.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contacts directs</h2>
+          <p class="contact-intro">Appelez-nous ou écrivez-nous : nous vous répondons rapidement.</p>
+          <ul class="contact-list">
+            <li><strong>Téléphone réservation :</strong> <a href="tel:+33652758286">06 52 75 82 86</a></li>
+            <li><strong>Téléphone information :</strong> <a href="tel:+33685704336">06 85 70 43 36</a></li>
+            <li><strong>E-mail réservation :</strong> <a href="mailto:caro.resanavettephoenix@gmail.com">caro.resanavettephoenix@gmail.com</a></li>
+            <li>
+              <strong>Renseignement &amp; réclamation :</strong>
+              <a href="mailto:Phoenix.lts28@navettephoenix.fr">Phoenix.lts28@navettephoenix.fr</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-card">
+          <h3>Informations application</h3>
+          <ul>
+            <li>Version : <strong>1.0.0</strong></li>
+            <li>Code Play Store : <strong>17</strong></li>
+            <li>Package : <code>com.phoenix.navette</code></li>
+            <li>Compatibilité : Android 7.0+</li>
+          </ul>
+          <a class="btn btn-outline" href="https://www.navettephoenix.fr/" target="_blank" rel="noopener">Site officiel</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sos" class="section sos-section">
+      <div class="container">
+        <div class="sos-card">
+          <div class="sos-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 4l8 16H4l8-16z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="12" cy="17" r="1.2" fill="currentColor" />
+              <path d="M12 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div>
+            <h2>Besoin d’aide urgente&nbsp;?</h2>
+            <p>Composez immédiatement le 112 ou cliquez sur le bouton ci-dessous.</p>
+          </div>
+          <a class="btn btn-alert" href="tel:112">
+            <span class="btn-label">Appeler le 112</span>
+          </a>
+        </div>
+        <p class="sos-footnote">Le 112 est le numéro d’urgence européen disponible 24h/24.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>&copy; <span id="current-year"></span> Navette Phoenix. Tous droits réservés.</p>
+      <nav aria-label="Liens de pied de page">
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="#reservation">Réserver un trajet</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite" hidden></div>
+  <div class="modal-backdrop" hidden></div>
+  <div
+    class="modal"
+    id="success-modal"
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="success-title"
+    hidden
+    tabindex="-1"
+  >
+    <div class="modal-content">
+      <h3 id="success-title">Demande envoyée</h3>
+      <p id="success-message">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
+      <button type="button" class="btn btn-full" data-close-modal>
+        <span class="btn-label">Fermer</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="assets/script.js" defer></script>
+</body>
+</html>
