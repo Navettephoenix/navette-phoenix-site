@@ -277,6 +277,7 @@ const compareMapElement = document.getElementById('compare-map');
 const distanceEl = document.getElementById('result-distance');
 const shuttleEl = document.getElementById('result-shuttle');
 const carEl = document.getElementById('result-car');
+const useLocationButton = document.getElementById('compare-use-location');
 
 let compareMap;
 let routeLayer;
@@ -327,6 +328,36 @@ const geocodeAddress = async (query) => {
     lat: Number(result.lat),
     lon: Number(result.lon),
     label: result.display_name,
+  };
+};
+
+const reverseGeocode = async (lat, lon) => {
+  const url = new URL('https://nominatim.openstreetmap.org/reverse');
+  url.searchParams.set('format', 'json');
+  url.searchParams.set('lat', String(lat));
+  url.searchParams.set('lon', String(lon));
+  url.searchParams.set('zoom', '16');
+  url.searchParams.set('addressdetails', '0');
+
+  const response = await fetch(url.toString(), {
+    headers: {
+      'Accept-Language': 'fr',
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error('Impossible de déterminer votre adresse.');
+  }
+
+  const data = await response.json();
+  if (!data || !data.display_name) {
+    throw new Error('Adresse introuvable pour cette position.');
+  }
+
+  return {
+    lat,
+    lon,
+    label: data.display_name,
   };
 };
 
@@ -463,4 +494,42 @@ if (compareMapElement) {
 if (compareForm) {
   attachValidation(compareForm);
   compareForm.addEventListener('submit', handleCompareSubmit);
+}
+
+if (useLocationButton) {
+  if (!('geolocation' in navigator)) {
+    useLocationButton.hidden = true;
+  } else {
+    useLocationButton.addEventListener('click', () => {
+      startButtonLoading(useLocationButton);
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          try {
+            const { latitude, longitude } = position.coords;
+            const result = await reverseGeocode(latitude, longitude);
+            const pickupInput = document.getElementById('compare-pickup');
+            if (pickupInput) {
+              pickupInput.value = result.label;
+              pickupInput.focus();
+            }
+            showToast('Position détectée, vérifiez l’adresse avant envoi.');
+          } catch (error) {
+            console.error(error);
+            showToast('Impossible de récupérer votre adresse actuelle.', true);
+          } finally {
+            stopButtonLoading(useLocationButton);
+          }
+        },
+        (error) => {
+          console.error(error);
+          showToast("Accès à la localisation refusé.", true);
+          stopButtonLoading(useLocationButton);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+        }
+      );
+    });
+  }
 }

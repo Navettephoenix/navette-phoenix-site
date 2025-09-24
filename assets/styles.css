@@ -95,41 +95,107 @@ a:focus {
   transform: translateY(-1px);
 }
 
-.hero {
-  padding: clamp(3rem, 8vw, 5.5rem) 0;
-  background: linear-gradient(180deg, rgba(255, 138, 50, 0.12), rgba(255, 255, 255, 0));
+.main-nav .nav-alert {
+  background: rgba(255, 77, 79, 0.22);
+  border: 1px solid rgba(255, 77, 79, 0.4);
 }
 
-.hero-grid {
+.main-nav .nav-alert:hover,
+.main-nav .nav-alert:focus {
+  background: rgba(255, 77, 79, 0.35);
+}
+
+.app-hero {
+  padding: clamp(3.5rem, 10vw, 6rem) 0;
+  background: linear-gradient(135deg, rgba(255, 122, 24, 0.95), rgba(255, 179, 71, 0.9));
+  color: #fff;
+}
+
+.hero-layout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1.5rem, 6vw, 3rem);
   align-items: center;
 }
 
-.hero h1 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  margin-bottom: 1rem;
+.hero-copy h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3rem);
+  margin-bottom: 0.75rem;
 }
 
-.hero p {
-  margin-bottom: 1.5rem;
-  color: var(--text-muted);
+.hero-copy p {
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.hero-card {
+.hero-map-card {
   border-radius: var(--radius-large);
   overflow: hidden;
-  box-shadow: var(--shadow);
-  background: #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.12);
   min-height: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.hero-card iframe {
+.hero-map-card iframe {
   border: 0;
   width: 100%;
   height: 100%;
   min-height: 320px;
+  filter: saturate(1.1);
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.quick-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-medium);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.quick-action:hover,
+.quick-action:focus {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.quick-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.quick-action--alert {
+  background: rgba(255, 77, 79, 0.22);
+  border-color: rgba(255, 77, 79, 0.55);
+}
+
+.quick-action--alert .quick-icon {
+  background: rgba(255, 77, 79, 0.32);
+}
+
+.quick-action--alert:hover,
+.quick-action--alert:focus {
+  background: rgba(255, 77, 79, 0.3);
 }
 
 .btn {
@@ -189,6 +255,28 @@ a:focus {
   box-shadow: none;
 }
 
+.btn-ghost {
+  background: rgba(255, 140, 36, 0.08);
+  color: var(--orange-solid);
+  border: 1.5px solid rgba(255, 140, 36, 0.4);
+  box-shadow: none;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus {
+  background: rgba(255, 140, 36, 0.14);
+}
+
+.btn-alert {
+  background: #ff4d4f;
+  box-shadow: 0 14px 30px rgba(255, 77, 79, 0.35);
+}
+
+.btn-alert:hover,
+.btn-alert:focus {
+  box-shadow: 0 18px 36px rgba(255, 77, 79, 0.45);
+}
+
 .btn-full {
   width: 100%;
   margin-top: 1rem;
@@ -196,6 +284,48 @@ a:focus {
 
 .section {
   padding: clamp(3rem, 7vw, 4.5rem) 0;
+}
+
+.section-alt {
+  background: var(--background-alt);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.info-card {
+  background: #fff;
+  border-radius: var(--radius-large);
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.info-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+}
+
+.info-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+}
+
+.info-card ul li + li {
+  margin-top: 0.4rem;
+}
+
+.info-contacts {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-contacts li {
+  margin-bottom: 0.5rem;
 }
 
 .section-alt {
@@ -280,6 +410,13 @@ a:focus {
   margin: 0;
 }
 
+.form-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 5vw, 2.5rem);
+  align-items: start;
+}
+
 .form {
   background: #fff;
   border-radius: var(--radius-large);
@@ -287,6 +424,25 @@ a:focus {
   box-shadow: var(--shadow);
   display: grid;
   gap: 1.25rem;
+}
+
+.form .btn-ghost {
+  justify-self: stretch;
+}
+
+.form-map-card {
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  min-height: 340px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.form-map-card iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
 }
 
 .form-field {
@@ -540,12 +696,20 @@ a:focus {
   align-items: start;
 }
 
+.contact-intro {
+  color: var(--text-muted);
+}
+
 .contact-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
   gap: 0.75rem;
+}
+
+.contact-list a {
+  font-weight: 600;
 }
 
 .contact-card {
@@ -555,6 +719,53 @@ a:focus {
   box-shadow: var(--shadow);
   display: grid;
   gap: 1rem;
+}
+
+.sos-section {
+  background: linear-gradient(135deg, #ff6b6b, #ff2d55);
+  color: #fff;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+}
+
+.sos-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: rgba(0, 0, 0, 0.1);
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: var(--radius-large);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 45px rgba(255, 0, 0, 0.2);
+}
+
+.sos-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sos-footnote {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sos-card .btn {
+  min-width: 180px;
+}
+
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
 }
 
 .site-footer {
@@ -586,7 +797,7 @@ a:focus {
     justify-content: center;
   }
 
-  .hero-card {
+  .hero-map-card {
     order: -1;
   }
 
@@ -594,19 +805,19 @@ a:focus {
     position: static;
   }
 
-  .action-grid {
+  .quick-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 600px) {
-  .action-grid {
+  .quick-actions {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem;
   }
 
-  .action-card {
-    padding: 1.25rem 0.75rem;
+  .quick-action {
+    padding: 1rem 0.75rem;
   }
 
   .btn {

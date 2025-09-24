@@ -29,36 +29,112 @@
         />
         <div>
           <p class="app-name">Navette Phoenix</p>
-          <p class="app-tagline">Transport à la Demande – Communautés Terre &amp; Forêt du Perche</p>
+          <p class="app-tagline">Votre mobilité en milieu rural, simplifiée.</p>
         </div>
       </div>
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="#services">Services</a>
-        <a href="#reservation">Réservation TAD</a>
-        <a href="#comparateur">Comparateur</a>
+        <a href="#reservation">Réserver TAD</a>
         <a href="#devis">Devis hors secteur</a>
+        <a href="#infos">Infos pratiques</a>
+        <a href="#comparateur">Comparateur</a>
         <a href="#contact">Contacts</a>
-        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="#sos" class="nav-alert">SOS 112</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
+    <section class="app-hero" id="top">
+      <div class="container hero-layout">
+        <div class="hero-copy">
           <h1>Votre navette locale, rapide et fiable</h1>
           <p>
-            Réservez votre trajet dans les communautés de communes
-            <strong>Terre de Perche</strong> et <strong>Forêt du Perche</strong>.
-            Tarif unique de <strong>5 € par personne</strong>, jusqu’à 4 places par navette.
+            Transport à la demande dans les communautés de communes
+            <strong>Terre de Perche</strong> et <strong>Forêt du Perche</strong>. Tarif unique de
+            <strong>5 € par personne</strong>, jusqu’à 4 passagers.
           </p>
-          <div class="hero-cta">
-            <a class="btn" href="#reservation">Réserver maintenant</a>
-            <a class="btn btn-outline" href="#devis">Demander un devis</a>
+          <div class="quick-actions" role="list">
+            <a class="quick-action" href="#reservation" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 16l3.2-8h9.4a1.4 1.4 0 011.35 1.74l-1.4 5.6A1.4 1.4 0 0116.2 16H5z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="7.5" cy="19" r="1.5" fill="currentColor" />
+                  <circle cx="16.5" cy="19" r="1.5" fill="currentColor" />
+                </svg>
+              </span>
+              <span class="quick-label">Réserver TAD</span>
+            </a>
+            <a class="quick-action" href="#devis" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M6 3h9l3 3v13a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M9 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M9 9h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="quick-label">Devis hors secteur</span>
+            </a>
+            <a class="quick-action" href="#contact" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 5a2 2 0 012-2h1.3a1 1 0 01.93.66l1.24 3.71a1 1 0 01-.43 1.17l-1.66 1.1a12.05 12.05 0 006.6 6.6l1.1-1.66a1 1 0 011.17-.43l3.71 1.24a1 1 0 01.66.93V18a2 2 0 01-2 2h-1C9.82 20 4 14.18 4 7V5z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="quick-label">Contact</span>
+            </a>
+            <a class="quick-action" href="privacy.html" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M4 4h12l3 3v13a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path d="M9 12h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                  <path d="M9 8h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="quick-label">Politique</span>
+            </a>
+            <a class="quick-action quick-action--alert" href="#sos" role="listitem">
+              <span class="quick-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 4l8 16H4l8-16z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="12" cy="17" r="1" fill="currentColor" />
+                  <path d="M12 10v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+                </svg>
+              </span>
+              <span class="quick-label">SOS 112</span>
+            </a>
           </div>
         </div>
-        <div class="hero-card" aria-label="Carte des zones desservies">
+        <div class="hero-map-card" aria-label="Carte des zones desservies">
           <iframe
             title="Carte des communautés Terre et Forêt du Perche"
             src="https://www.google.com/maps/d/embed?mid=1YHSYqZgyE3lPmMVojWa3FzaAmZ-Ci_E&ehbc=2E312F"
@@ -68,99 +144,39 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="actions">
-      <div class="container">
-        <h2>Accès rapide</h2>
-        <div class="action-grid" role="list">
-          <a class="action-card" href="#reservation" role="listitem">
-            <div class="action-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M5 16l3.2-8h9.4a1.4 1.4 0 011.35 1.74l-1.4 5.6A1.4 1.4 0 0116.2 16H5z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <circle cx="7.5" cy="19" r="1.5" fill="currentColor" />
-                <circle cx="16.5" cy="19" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
-            <p class="action-label">Réserver un trajet TAD</p>
-          </a>
-          <a class="action-card" href="#devis" role="listitem">
-            <div class="action-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M6 3h9l3 3v13a2 2 0 01-2 2H6a2 2 0 01-2-2V5a2 2 0 012-2z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path d="M9 13h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                <path d="M9 9h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-              </svg>
-            </div>
-            <p class="action-label">Demander un devis</p>
-          </a>
-          <a class="action-card" href="#comparateur" role="listitem">
-            <div class="action-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M4 17h16M4 7h16M10 3l-2 4h4l-2 4"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <circle cx="7" cy="17" r="1.5" fill="currentColor" />
-                <circle cx="17" cy="7" r="1.5" fill="currentColor" />
-              </svg>
-            </div>
-            <p class="action-label">Comparer un trajet</p>
-          </a>
-          <a class="action-card" href="#contact" role="listitem">
-            <div class="action-icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M4 5a2 2 0 012-2h1.3a1 1 0 01.93.66l1.24 3.71a1 1 0 01-.43 1.17l-1.66 1.1a12.05 12.05 0 006.6 6.6l1.1-1.66a1 1 0 011.17-.43l3.71 1.24a1 1 0 01.66.93V18a2 2 0 01-2 2h-1C9.82 20 4 14.18 4 7V5z"
-                  stroke="currentColor"
-                  stroke-width="1.6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
-            <p class="action-label">Contacts &amp; aide</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <h2>Pourquoi choisir Navette Phoenix&nbsp;?</h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <h3>Couverture locale optimale</h3>
-            <p>
-              Prise en charge sur l’ensemble des villages des communautés
-              <strong>Terre de Perche</strong> et <strong>Forêt du Perche</strong>.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Tarif clair</h3>
-            <p>
-              <strong>5 € par personne</strong>, jusqu’à 4 passagers. Aucun frais caché&nbsp;: calculez instantanément le montant de
-              votre trajet TAD.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Réservation simplifiée</h3>
-            <p>Formulaires rapides, validations automatiques et envoi direct vers notre équipe sans quitter l’application.</p>
-          </article>
-        </div>
+    <section id="infos" class="section section-alt">
+      <div class="container info-grid">
+        <article class="info-card">
+          <h2>Fonctionnement du TAD</h2>
+          <p>
+            Trajets sur réservation du lundi au samedi, 9h–19h. Vous choisissez l’heure souhaitée et un conseiller confirme la prise
+            en charge.
+          </p>
+          <ul>
+            <li>Tarif fixe : 5&nbsp;€ par personne</li>
+            <li>Maximum 4 passagers par navette</li>
+            <li>Réservation minimum la veille pour garantir la disponibilité</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h2>Horaires &amp; zones desservies</h2>
+          <p>Communautés de communes couvertes :</p>
+          <ul>
+            <li><strong>Terre de Perche</strong></li>
+            <li><strong>Forêt du Perche</strong></li>
+          </ul>
+          <p>Nous relions gares, centres-bourgs, établissements de santé et services publics des territoires.</p>
+        </article>
+        <article class="info-card">
+          <h2>Contacts clés</h2>
+          <p>Une équipe locale vous accompagne pour toute question ou demande spécifique.</p>
+          <ul class="info-contacts">
+            <li><strong>Réservations :</strong> <a href="tel:+33652758286">06&nbsp;52&nbsp;75&nbsp;82&nbsp;86</a></li>
+            <li><strong>Informations :</strong> <a href="tel:+33685704336">06&nbsp;85&nbsp;70&nbsp;43&nbsp;36</a></li>
+            <li><strong>E-mail TAD :</strong> <a href="mailto:caro.resanavettephoenix@gmail.com">caro.resanavettephoenix@gmail.com</a></li>
+            <li><strong>Réclamations :</strong> <a href="mailto:Phoenix.lts28@navettephoenix.fr">Phoenix.lts28@navettephoenix.fr</a></li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -168,72 +184,81 @@
       <div class="container">
         <h2>Réservation Transport à la Demande (TAD)</h2>
         <p>Remplissez les informations ci-dessous. Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
-        <form id="tad-form" class="form" novalidate>
-          <div class="form-field">
-            <input type="text" id="tad-firstname" name="firstname" placeholder=" " required autocomplete="given-name" />
-            <label for="tad-firstname">Prénom *</label>
-            <p class="error" data-error-for="tad-firstname"></p>
-          </div>
-          <div class="form-field">
-            <input type="text" id="tad-lastname" name="lastname" placeholder=" " required autocomplete="family-name" />
-            <label for="tad-lastname">Nom *</label>
-            <p class="error" data-error-for="tad-lastname"></p>
-          </div>
-          <div class="form-field">
-            <input
-              type="tel"
-              id="tad-phone"
-              name="phone"
-              placeholder=" "
-              required
-              inputmode="tel"
-              pattern="^(\\+33|0)[1-9](?:[ .-]?\\d{2}){4}$"
-            />
-            <label for="tad-phone">Téléphone *</label>
-            <p class="error" data-error-for="tad-phone"></p>
-          </div>
-          <div class="form-field">
-            <input type="text" id="tad-pickup" name="pickup" placeholder=" " required autocomplete="address-line1" />
-            <label for="tad-pickup">Adresse de prise en charge *</label>
-            <p class="error" data-error-for="tad-pickup"></p>
-          </div>
-          <div class="form-field">
-            <input type="text" id="tad-dropoff" name="dropoff" placeholder=" " required autocomplete="address-line2" />
-            <label for="tad-dropoff">Adresse de dépose *</label>
-            <p class="error" data-error-for="tad-dropoff"></p>
-          </div>
-          <div class="form-grid">
-            <div class="form-field select-field">
-              <label for="tad-date">Date *</label>
-              <input type="date" id="tad-date" name="date" required />
-              <p class="error" data-error-for="tad-date"></p>
+        <div class="form-layout">
+          <form id="tad-form" class="form" novalidate>
+            <div class="form-field">
+              <input type="text" id="tad-firstname" name="firstname" placeholder=" " required autocomplete="given-name" />
+              <label for="tad-firstname">Prénom *</label>
+              <p class="error" data-error-for="tad-firstname"></p>
             </div>
-            <div class="form-field select-field">
-              <label for="tad-time">Heure *</label>
-              <input type="time" id="tad-time" name="time" required />
-              <p class="error" data-error-for="tad-time"></p>
+            <div class="form-field">
+              <input type="text" id="tad-lastname" name="lastname" placeholder=" " required autocomplete="family-name" />
+              <label for="tad-lastname">Nom *</label>
+              <p class="error" data-error-for="tad-lastname"></p>
             </div>
-            <div class="form-field select-field">
-              <label for="tad-passengers">Nombre de passagers *</label>
-              <select id="tad-passengers" name="passengers" required>
-                <option value="" disabled selected>Choisissez</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-              <p class="error" data-error-for="tad-passengers"></p>
+            <div class="form-field">
+              <input
+                type="tel"
+                id="tad-phone"
+                name="phone"
+                placeholder=" "
+                required
+                inputmode="tel"
+                pattern="^(\\+33|0)[1-9](?:[ .-]?\\d{2}){4}$"
+              />
+              <label for="tad-phone">Téléphone *</label>
+              <p class="error" data-error-for="tad-phone"></p>
             </div>
+            <div class="form-field">
+              <input type="text" id="tad-pickup" name="pickup" placeholder=" " required autocomplete="address-line1" />
+              <label for="tad-pickup">Adresse de prise en charge *</label>
+              <p class="error" data-error-for="tad-pickup"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="tad-dropoff" name="dropoff" placeholder=" " required autocomplete="address-line2" />
+              <label for="tad-dropoff">Adresse de dépose *</label>
+              <p class="error" data-error-for="tad-dropoff"></p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field select-field">
+                <label for="tad-date">Date *</label>
+                <input type="date" id="tad-date" name="date" required />
+                <p class="error" data-error-for="tad-date"></p>
+              </div>
+              <div class="form-field select-field">
+                <label for="tad-time">Heure *</label>
+                <input type="time" id="tad-time" name="time" required />
+                <p class="error" data-error-for="tad-time"></p>
+              </div>
+              <div class="form-field select-field">
+                <label for="tad-passengers">Nombre de passagers *</label>
+                <select id="tad-passengers" name="passengers" required>
+                  <option value="" disabled selected>Choisissez</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+                <p class="error" data-error-for="tad-passengers"></p>
+              </div>
+            </div>
+            <div class="total" aria-live="polite">
+              <span>Total estimé :</span>
+              <strong id="tad-total">0 €</strong>
+            </div>
+            <button type="submit" class="btn btn-full" data-loading-text="Envoi en cours…">
+              <span class="btn-label">Envoyer la réservation</span>
+            </button>
+            <p class="form-footnote">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
+          </form>
+          <div class="form-map-card" aria-label="Carte des prises en charge Navette Phoenix">
+            <iframe
+              title="Carte des zones Navette Phoenix"
+              src="https://www.google.com/maps/d/embed?mid=1YHSYqZgyE3lPmMVojWa3FzaAmZ-Ci_E&ehbc=2E312F"
+              loading="lazy"
+            ></iframe>
           </div>
-          <div class="total" aria-live="polite">
-            <span>Total estimé :</span>
-            <strong id="tad-total">0 €</strong>
-          </div>
-          <button type="submit" class="btn btn-full" data-loading-text="Envoi en cours…">
-            <span class="btn-label">Envoyer la réservation</span>
-          </button>
-          <p class="form-footnote">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
-        </form>
+        </div>
       </div>
     </section>
 
@@ -256,6 +281,9 @@
               <label for="compare-dropoff">Adresse de dépose *</label>
               <p class="error" data-error-for="compare-dropoff"></p>
             </div>
+            <button type="button" class="btn btn-ghost" id="compare-use-location" data-loading-text="Localisation…">
+              <span class="btn-label">Utiliser ma position</span>
+            </button>
             <button type="submit" class="btn btn-full" data-loading-text="Calcul en cours…">
               <span class="btn-label">Calculer le trajet</span>
             </button>
@@ -286,79 +314,88 @@
       <div class="container">
         <h2>Devis hors secteur — Gare, Aéroport, Paris, toute la France</h2>
         <p>Pour vos trajets longue distance, indiquez-nous vos besoins. Nous vous recontactons rapidement avec une proposition personnalisée.</p>
-        <form id="devis-form" class="form" novalidate>
-          <div class="form-field">
-            <input type="text" id="quote-name" name="name" placeholder=" " required autocomplete="name" />
-            <label for="quote-name">Nom et prénom *</label>
-            <p class="error" data-error-for="quote-name"></p>
-          </div>
-          <div class="form-field">
-            <input
-              type="tel"
-              id="quote-phone"
-              name="phone"
-              placeholder=" "
-              required
-              inputmode="tel"
-              pattern="^(\\+33|0)[1-9](?:[ .-]?\\d{2}){4}$"
-            />
-            <label for="quote-phone">Téléphone *</label>
-            <p class="error" data-error-for="quote-phone"></p>
-          </div>
-          <div class="form-field">
-            <input type="email" id="quote-email" name="email" placeholder=" " required autocomplete="email" />
-            <label for="quote-email">E-mail *</label>
-            <p class="error" data-error-for="quote-email"></p>
-          </div>
-          <div class="form-field">
-            <input type="text" id="quote-pickup" name="pickup" placeholder=" " required />
-            <label for="quote-pickup">Adresse de prise en charge *</label>
-            <p class="error" data-error-for="quote-pickup"></p>
-          </div>
-          <div class="form-field">
-            <input type="text" id="quote-dropoff" name="dropoff" placeholder=" " required />
-            <label for="quote-dropoff">Adresse de dépose *</label>
-            <p class="error" data-error-for="quote-dropoff"></p>
-          </div>
-          <div class="form-grid">
-            <div class="form-field select-field">
-              <label for="quote-date">Date *</label>
-              <input type="date" id="quote-date" name="date" required />
-              <p class="error" data-error-for="quote-date"></p>
+        <div class="form-layout">
+          <form id="devis-form" class="form" novalidate>
+            <div class="form-field">
+              <input type="text" id="quote-name" name="name" placeholder=" " required autocomplete="name" />
+              <label for="quote-name">Nom et prénom *</label>
+              <p class="error" data-error-for="quote-name"></p>
             </div>
-            <div class="form-field select-field">
-              <label for="quote-time">Heure *</label>
-              <input type="time" id="quote-time" name="time" required />
-              <p class="error" data-error-for="quote-time"></p>
+            <div class="form-field">
+              <input
+                type="tel"
+                id="quote-phone"
+                name="phone"
+                placeholder=" "
+                required
+                inputmode="tel"
+                pattern="^(\\+33|0)[1-9](?:[ .-]?\\d{2}){4}$"
+              />
+              <label for="quote-phone">Téléphone *</label>
+              <p class="error" data-error-for="quote-phone"></p>
             </div>
+            <div class="form-field">
+              <input type="email" id="quote-email" name="email" placeholder=" " required autocomplete="email" />
+              <label for="quote-email">E-mail *</label>
+              <p class="error" data-error-for="quote-email"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="quote-pickup" name="pickup" placeholder=" " required />
+              <label for="quote-pickup">Adresse de prise en charge *</label>
+              <p class="error" data-error-for="quote-pickup"></p>
+            </div>
+            <div class="form-field">
+              <input type="text" id="quote-dropoff" name="dropoff" placeholder=" " required />
+              <label for="quote-dropoff">Adresse de dépose *</label>
+              <p class="error" data-error-for="quote-dropoff"></p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field select-field">
+                <label for="quote-date">Date *</label>
+                <input type="date" id="quote-date" name="date" required />
+                <p class="error" data-error-for="quote-date"></p>
+              </div>
+              <div class="form-field select-field">
+                <label for="quote-time">Heure *</label>
+                <input type="time" id="quote-time" name="time" required />
+                <p class="error" data-error-for="quote-time"></p>
+              </div>
+            </div>
+            <fieldset class="segmented">
+              <legend>Type de trajet *</legend>
+              <div class="segment-group" role="radiogroup" aria-required="true">
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Gare" required />
+                  <span>Gare</span>
+                </label>
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Aéroport" />
+                  <span>Aéroport</span>
+                </label>
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Paris" />
+                  <span>Paris</span>
+                </label>
+                <label class="segment">
+                  <input type="radio" name="trip_type" value="Toute la France" />
+                  <span>Toute la France</span>
+                </label>
+              </div>
+              <p class="error" data-error-for="trip_type"></p>
+            </fieldset>
+            <button type="submit" class="btn btn-full" data-loading-text="Envoi en cours…">
+              <span class="btn-label">Demander un devis</span>
+            </button>
+            <p class="form-footnote">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
+          </form>
+          <div class="form-map-card" aria-label="Carte de calcul des trajets longue distance">
+            <iframe
+              title="Carte hors secteur Navette Phoenix"
+              src="https://www.google.com/maps/d/embed?mid=1YHSYqZgyE3lPmMVojWa3FzaAmZ-Ci_E&ehbc=2E312F"
+              loading="lazy"
+            ></iframe>
           </div>
-          <fieldset class="segmented">
-            <legend>Type de trajet *</legend>
-            <div class="segment-group" role="radiogroup" aria-required="true">
-              <label class="segment">
-                <input type="radio" name="trip_type" value="Gare" required />
-                <span>Gare</span>
-              </label>
-              <label class="segment">
-                <input type="radio" name="trip_type" value="Aéroport" />
-                <span>Aéroport</span>
-              </label>
-              <label class="segment">
-                <input type="radio" name="trip_type" value="Paris" />
-                <span>Paris</span>
-              </label>
-              <label class="segment">
-                <input type="radio" name="trip_type" value="Toute la France" />
-                <span>Toute la France</span>
-              </label>
-            </div>
-            <p class="error" data-error-for="trip_type"></p>
-          </fieldset>
-          <button type="submit" class="btn btn-full" data-loading-text="Envoi en cours…">
-            <span class="btn-label">Demander un devis</span>
-          </button>
-          <p class="form-footnote">✔ Un conseiller vous rappelle sous 2&nbsp;h (9h–19h, lun–sam).</p>
-        </form>
+        </div>
       </div>
     </section>
 
@@ -383,6 +420,7 @@
       <div class="container contact-grid">
         <div>
           <h2>Contacts directs</h2>
+          <p class="contact-intro">Appelez-nous ou écrivez-nous : nous vous répondons rapidement.</p>
           <ul class="contact-list">
             <li><strong>Téléphone réservation :</strong> <a href="tel:+33652758286">06 52 75 82 86</a></li>
             <li><strong>Téléphone information :</strong> <a href="tel:+33685704336">06 85 70 43 36</a></li>
@@ -394,11 +432,43 @@
           </ul>
         </div>
         <div class="contact-card">
-          <h3>Version de l’application</h3>
-          <p>Version actuelle : <strong>1.0.0</strong> (Code version Play Store&nbsp;: <strong>17</strong>).</p>
-          <p>Compatibilité&nbsp;: Android 7.0 et versions ultérieures.</p>
-          <a class="btn btn-outline" href="https://www.navettephoenix.fr/" target="_blank" rel="noopener">Découvrir notre site officiel</a>
+          <h3>Informations application</h3>
+          <ul>
+            <li>Version : <strong>1.0.0</strong></li>
+            <li>Code Play Store : <strong>17</strong></li>
+            <li>Package : <code>com.phoenix.navette</code></li>
+            <li>Compatibilité : Android 7.0+</li>
+          </ul>
+          <a class="btn btn-outline" href="https://www.navettephoenix.fr/" target="_blank" rel="noopener">Site officiel</a>
         </div>
+      </div>
+    </section>
+
+    <section id="sos" class="section sos-section">
+      <div class="container">
+        <div class="sos-card">
+          <div class="sos-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 4l8 16H4l8-16z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="12" cy="17" r="1.2" fill="currentColor" />
+              <path d="M12 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div>
+            <h2>Besoin d’aide urgente&nbsp;?</h2>
+            <p>Composez immédiatement le 112 ou cliquez sur le bouton ci-dessous.</p>
+          </div>
+          <a class="btn btn-alert" href="tel:112">
+            <span class="btn-label">Appeler le 112</span>
+          </a>
+        </div>
+        <p class="sos-footnote">Le 112 est le numéro d’urgence européen disponible 24h/24.</p>
       </div>
     </section>
   </main>
