@@ -194,7 +194,7 @@ const handleSubmit = (event) => {
 
   if (form.id === 'tad-form' || form.id === 'devis-form') {
     payload.recipient_email = 'caro.resanavettephoenix@gmail.com';
-    payload.manager_email = 'Phoenix.lts28@navettephoenix.fr';
+    payload.manager_email = 'phoenix.lts28@gmail.com';
   }
 
   fetch(appsScriptUrl, {
