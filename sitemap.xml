@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.navettephoenix.fr/</loc>
-  </url>
-  <url>
-    <loc>https://www.navettephoenix.fr/tad-reservation.html</loc>
-  </url>
-  <url>
-    <loc>https://www.navettephoenix.fr/devis-hors-secteur.html</loc>
-  </url>
-  <url>
-    <loc>https://www.navettephoenix.fr/infos.html</loc>
-  </url>
-  <url>
-    <loc>https://www.navettephoenix.fr/contact.html</loc>
-  </url>
-  <url>
-    <loc>https://www.navettephoenix.fr/confidentialite.html</loc>
-  </url>
+  <url><loc>https://navettephoenix.github.io/navette-phoenix-site/</loc></url>
+  <url><loc>https://navettephoenix.github.io/navette-phoenix-site/tad-reservation.html</loc></url>
+  <url><loc>https://navettephoenix.github.io/navette-phoenix-site/devis-hors-secteur.html</loc></url>
+  <url><loc>https://navettephoenix.github.io/navette-phoenix-site/infos.html</loc></url>
+  <url><loc>https://navettephoenix.github.io/navette-phoenix-site/contact.html</loc></url>
+  <url><loc>https://navettephoenix.github.io/navette-phoenix-site/confidentialite.html</loc></url>
 </urlset>
