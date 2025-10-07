@@ -4,30 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Devis hors secteur – Navette Phoenix</title>
-  <meta name="description" content="Demande de devis Navette Phoenix pour les trajets hors secteur : Paris, gares, aéroports ou toute destination en France." />
-  <meta property="og:title" content="Devis hors secteur – Navette Phoenix" />
-  <meta property="og:description" content="Obtenez un devis personnalisé pour vos trajets hors secteur avec Navette Phoenix." />
-  <meta property="og:image" content="https://www.navettephoenix.fr/assets/img/logo-phoenix.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Devis hors secteur – Navette Phoenix" />
-  <meta name="twitter:description" content="Obtenez un devis personnalisé pour vos trajets hors secteur avec Navette Phoenix." />
-  <link rel="canonical" href="https://www.navettephoenix.fr/devis-hors-secteur.html" />
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="description" content="Demande de devis Navette Phoenix pour les trajets hors secteur : Paris, gares, aéroports ou toute destination en France.">
+
+  <!-- SEO / Social -->
+  <link rel="canonical" href="https://navettephoenix.github.io/navette-phoenix-site/devis-hors-secteur.html">
+  <meta property="og:title" content="Devis hors secteur – Navette Phoenix">
+  <meta property="og:description" content="Obtenez un devis personnalisé pour vos trajets hors secteur avec Navette Phoenix.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navettephoenix.github.io/navette-phoenix-site/devis-hors-secteur.html">
+  <meta property="og:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Devis hors secteur – Navette Phoenix">
+  <meta name="twitter:description" content="Obtenez un devis personnalisé pour vos trajets hors secteur avec Navette Phoenix.">
+  <meta name="twitter:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
+
+  <!-- Assets (chemins relatifs pour GitHub Pages) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifeste.webmanifest">
+  <link rel="stylesheet" href="actifs/css/styles.css">
+  <script src="actifs/js/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
-    <a class="logo" href="/">
-      <img src="/assets/img/logo-phoenix.svg" alt="Navette Phoenix" width="160" height="48">
+    <a class="logo" href="./">
+      <img src="actifs/img/logo-phoenix.svg" alt="Navette Phoenix" width="160" height="48">
     </a>
     <nav class="site-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="/tad-reservation.html">Réserver TAD</a></li>
-        <li><a href="/devis-hors-secteur.html" aria-current="page">Devis hors secteur</a></li>
-        <li><a href="/infos.html">Infos TAD</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="tad-reservation.html">Réserver TAD</a></li>
+        <li><a href="devis-hors-secteur.html" aria-current="page">Devis hors secteur</a></li>
+        <li><a href="infos.html">Infos TAD</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -45,36 +53,46 @@
           <input id="devis-name" name="nom" type="text" required autocomplete="name" aria-invalid="false">
           <p class="error-message" id="devis-name-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-phone">Téléphone</label>
-          <input id="devis-phone" name="telephone" type="tel" inputmode="tel" pattern="^(?:\\+33|0)\\s?(?:[1-5]|7|6|9)(?:[\\s\\.-]?\\d{2}){4}$" required aria-invalid="false">
+          <!-- Regex FR : +33 ou 0 ; 01–05,06,07,09 ; séparateurs optionnels -->
+          <input id="devis-phone" name="telephone" type="tel" inputmode="tel"
+                 pattern="^(?:\+33|0)\s?(?:[1-5]|7|6|9)(?:[\s\.-]?\d{2}){4}$"
+                 required aria-invalid="false">
           <p class="error-message" id="devis-phone-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-email">Email</label>
           <input id="devis-email" name="email" type="email" required autocomplete="email" aria-invalid="false">
           <p class="error-message" id="devis-email-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-depart">Départ</label>
           <input id="devis-depart" name="depart" type="text" required autocomplete="address-line1" aria-invalid="false">
           <p class="error-message" id="devis-depart-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-destination">Destination</label>
           <input id="devis-destination" name="destination" type="text" required autocomplete="address-line1" aria-invalid="false">
           <p class="error-message" id="devis-destination-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-date">Date</label>
           <input id="devis-date" name="date" type="date" required aria-invalid="false">
           <p class="error-message" id="devis-date-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-time">Heure</label>
           <input id="devis-time" name="heure" type="time" required aria-invalid="false">
           <p class="error-message" id="devis-time-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-passengers">Passagers</label>
           <select id="devis-passengers" name="passagers" required aria-invalid="false">
@@ -86,6 +104,7 @@
           </select>
           <p class="error-message" id="devis-passengers-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="devis-option">Option</label>
           <select id="devis-option" name="option" required aria-invalid="false">
@@ -97,6 +116,7 @@
           </select>
           <p class="error-message" id="devis-option-error" role="alert"></p>
         </div>
+
         <div class="form-actions">
           <button type="submit" class="btn-primary">Envoyer</button>
           <button type="button" class="btn-secondary" data-map-trigger="destination">Voir sur la carte</button>
@@ -117,6 +137,5 @@
       <p>Version : v1.18</p>
     </div>
   </footer>
-  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
