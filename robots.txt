@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.navettephoenix.fr/sitemap.xml
+
+Sitemap: https://navettephoenix.github.io/navette-phoenix-site/sitemap.xml
