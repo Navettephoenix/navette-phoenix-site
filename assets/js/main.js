@@ -103,9 +103,27 @@ function buildMessage(formData) {
 
 function disableSubmit(form, disabled) {
   const submit = form.querySelector('button[type="submit"]');
-  if (submit) {
-    submit.disabled = disabled;
+  if (!submit) {
+    return;
   }
+
+  if (disabled) {
+    if (!submit.dataset.originalText) {
+      submit.dataset.originalText = submit.textContent.trim();
+    }
+    submit.textContent = 'Envoi…';
+    submit.setAttribute('aria-busy', 'true');
+    submit.classList.add('is-loading');
+  } else {
+    if (submit.dataset.originalText) {
+      submit.textContent = submit.dataset.originalText;
+      delete submit.dataset.originalText;
+    }
+    submit.removeAttribute('aria-busy');
+    submit.classList.remove('is-loading');
+  }
+
+  submit.disabled = disabled;
 }
 
 function handleMapButtons() {
