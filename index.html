@@ -5,25 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Navette Phoenix – Mobilité rurale simplifiée</title>
   <meta name="description" content="Navette Phoenix propose un service de transport à la demande 5 € pour les communes du Perche et des trajets personnalisés hors secteur." />
-  <meta property="og:title" content="Navette Phoenix – Votre mobilité en milieu rural, simplifiée." />
-  <meta property="og:description" content="Réservez votre navette à la demande 5 € ou demandez un devis hors secteur avec Navette Phoenix." />
-  <meta property="og:url" content="https://www.navettephoenix.fr/" />
-  <meta property="og:image" content="https://www.navettephoenix.fr/assets/img/logo-phoenix.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Navette Phoenix" />
-  <meta name="twitter:description" content="Votre mobilité en milieu rural, simplifiée." />
-  <meta name="twitter:image" content="https://www.navettephoenix.fr/assets/img/logo-phoenix.svg" />
-  <link rel="canonical" href="https://www.navettephoenix.fr/" />
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
+
+  <!-- SEO / Social -->
+  <link rel="canonical" href="https://navettephoenix.github.io/navette-phoenix-site/">
+  <meta property="og:title" content="Navette Phoenix – Votre mobilité en milieu rural, simplifiée.">
+  <meta property="og:description" content="Réservez votre navette à la demande 5 € ou demandez un devis hors secteur avec Navette Phoenix.">
+  <meta property="og:url" content="https://navettephoenix.github.io/navette-phoenix-site/">
+  <meta property="og:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Navette Phoenix">
+  <meta name="twitter:description" content="Votre mobilité en milieu rural, simplifiée.">
+  <meta name="twitter:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
+
+  <!-- Assets (chemins relatifs pour GitHub Pages) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifeste.webmanifest">
+  <link rel="stylesheet" href="actifs/css/styles.css">
+  <script src="actifs/js/main.js" defer></script>
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Navette Phoenix",
-    "url": "https://www.navettephoenix.fr/",
+    "url": "https://navettephoenix.github.io/navette-phoenix-site/",
     "telephone": ["+33685704336", "+33652758286"],
     "areaServed": {
       "@type": "Place",
@@ -32,17 +39,19 @@
   }
   </script>
 </head>
+
 <body>
   <header class="site-header">
-    <a class="logo" href="/">
-      <img src="/assets/img/logo-phoenix.svg" alt="Navette Phoenix" width="160" height="48">
+    <a class="logo" href="./">
+      <img src="actifs/img/logo-phoenix.svg" alt="Navette Phoenix" width="96" height="96">
     </a>
+
     <nav class="site-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="/tad-reservation.html">Réserver TAD</a></li>
-        <li><a href="/devis-hors-secteur.html">Devis hors secteur</a></li>
-        <li><a href="/infos.html">Infos TAD</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="tad-reservation.html">Réserver TAD</a></li>
+        <li><a href="devis-hors-secteur.html">Devis hors secteur</a></li>
+        <li><a href="infos.html">Infos TAD</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -52,13 +61,14 @@
       <div class="hero-content">
         <h1 id="hero-title">Votre mobilité en milieu rural, simplifiée.</h1>
         <p>Navette Phoenix connecte les communes du Perche à leurs gares et services essentiels grâce à un transport à la demande accessible.</p>
+
         <div class="cta-group" role="group" aria-label="Actions principales">
-          <a class="btn-primary" href="/tad-reservation.html">TAD – 5 € (Réserver)</a>
-          <a class="btn-primary" href="/devis-hors-secteur.html">Hors Secteur – Devis</a>
-          <a class="btn-secondary" href="/infos.html">Infos TAD</a>
-          <a class="btn-secondary" href="/infos.html#zone-gares">Zone &amp; Gares</a>
-          <a class="btn-secondary" href="/contact.html">Contact</a>
-          <a class="btn-secondary" href="/confidentialite.html">Politique de confidentialité</a>
+          <a class="btn-primary" href="tad-reservation.html">TAD – 5 € (Réserver)</a>
+          <a class="btn-primary" href="devis-hors-secteur.html">Hors Secteur – Devis</a>
+          <a class="btn-secondary" href="infos.html">Infos TAD</a>
+          <a class="btn-secondary" href="infos.html#zone-gares">Zone &amp; Gares</a>
+          <a class="btn-secondary" href="contact.html">Contact</a>
+          <a class="btn-secondary" href="confidentialite.html">Politique de confidentialité</a>
           <a class="btn-alert" href="tel:112">SOS 112</a>
         </div>
       </div>
@@ -103,6 +113,5 @@
       <p>Version : v1.18</p>
     </div>
   </footer>
-  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
