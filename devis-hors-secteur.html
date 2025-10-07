@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devis hors secteur – Navette Phoenix</title>
+  <meta name="description" content="Demande de devis Navette Phoenix pour les trajets hors secteur : Paris, gares, aéroports ou toute destination en France." />
+  <meta property="og:title" content="Devis hors secteur – Navette Phoenix" />
+  <meta property="og:description" content="Obtenez un devis personnalisé pour vos trajets hors secteur avec Navette Phoenix." />
+  <meta property="og:image" content="https://www.navettephoenix.fr/assets/img/logo-phoenix.svg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Devis hors secteur – Navette Phoenix" />
+  <meta name="twitter:description" content="Obtenez un devis personnalisé pour vos trajets hors secteur avec Navette Phoenix." />
+  <link rel="canonical" href="https://www.navettephoenix.fr/devis-hors-secteur.html" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">
+      <img src="/assets/img/logo-phoenix.svg" alt="Navette Phoenix" width="160" height="48">
+    </a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="/tad-reservation.html">Réserver TAD</a></li>
+        <li><a href="/devis-hors-secteur.html" aria-current="page">Devis hors secteur</a></li>
+        <li><a href="/infos.html">Infos TAD</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h1>Demande de devis hors secteur</h1>
+      <p>Pour un trajet personnalisé hors zone TAD, complétez ce formulaire. Réponse rapide assurée.</p>
+    </section>
+
+    <section class="form-section">
+      <form id="devis-form" class="form-card" data-form-type="devis_hors_secteur" novalidate>
+        <div class="form-group">
+          <label for="devis-name">Nom</label>
+          <input id="devis-name" name="nom" type="text" required autocomplete="name" aria-invalid="false">
+          <p class="error-message" id="devis-name-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-phone">Téléphone</label>
+          <input id="devis-phone" name="telephone" type="tel" inputmode="tel" pattern="^(?:\\+33|0)\\s?(?:[1-5]|7|6|9)(?:[\\s\\.-]?\\d{2}){4}$" required aria-invalid="false">
+          <p class="error-message" id="devis-phone-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-email">Email</label>
+          <input id="devis-email" name="email" type="email" required autocomplete="email" aria-invalid="false">
+          <p class="error-message" id="devis-email-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-depart">Départ</label>
+          <input id="devis-depart" name="depart" type="text" required autocomplete="address-line1" aria-invalid="false">
+          <p class="error-message" id="devis-depart-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-destination">Destination</label>
+          <input id="devis-destination" name="destination" type="text" required autocomplete="address-line1" aria-invalid="false">
+          <p class="error-message" id="devis-destination-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-date">Date</label>
+          <input id="devis-date" name="date" type="date" required aria-invalid="false">
+          <p class="error-message" id="devis-date-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-time">Heure</label>
+          <input id="devis-time" name="heure" type="time" required aria-invalid="false">
+          <p class="error-message" id="devis-time-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-passengers">Passagers</label>
+          <select id="devis-passengers" name="passagers" required aria-invalid="false">
+            <option value="">Sélectionnez</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+          <p class="error-message" id="devis-passengers-error" role="alert"></p>
+        </div>
+        <div class="form-group">
+          <label for="devis-option">Option</label>
+          <select id="devis-option" name="option" required aria-invalid="false">
+            <option value="">Choisissez</option>
+            <option>Paris</option>
+            <option>Gares : Paris-Nord, Paris-Lyon, Saint-Lazare, Montparnasse, Paris-Est, Austerlitz, Bercy</option>
+            <option>Aéroports : CDG, Orly, Beauvais</option>
+            <option>Autre (France)</option>
+          </select>
+          <p class="error-message" id="devis-option-error" role="alert"></p>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Envoyer</button>
+          <button type="button" class="btn-secondary" data-map-trigger="destination">Voir sur la carte</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <p><strong>Navette Phoenix</strong></p>
+      <p>Tél. renseignements : <a href="tel:+33685704336">06 85 70 43 36</a></p>
+      <p>Tél. réservations : <a href="tel:+33652758286">06 52 75 82 86</a></p>
+      <p>Email : <a href="mailto:caro.resanavettephoenix@gmail.com?cc=phoenix.lts28@gmail.com">caro.resanavettephoenix@gmail.com</a></p>
+    </div>
+    <div class="footer-meta">
+      <p>Site : <a href="https://www.navettephoenix.fr/">www.navettephoenix.fr</a></p>
+      <p>Version : v1.18</p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
