@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="96" viewBox="0 0 320 96" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Navette Phoenix</title>
+  <desc id="desc">Lettrage Navette Phoenix avec un dégradé orange</desc>
+  <defs>
+    <linearGradient id="phoenixGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A00" />
+      <stop offset="100%" stop-color="#E56D00" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="96" rx="20" fill="#121212" />
+  <text x="50%" y="55%" text-anchor="middle" fill="url(#phoenixGradient)" font-family="'Segoe UI', 'Roboto', sans-serif" font-size="44" font-weight="700">Navette</text>
+  <text x="50%" y="85%" text-anchor="middle" fill="#FFFFFF" font-family="'Segoe UI', 'Roboto', sans-serif" font-size="24" font-weight="500">Phoenix</text>
+</svg>
