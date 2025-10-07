@@ -203,19 +203,29 @@ function handleSubmit(event) {
     }
   }
 
+  const useWebhook = Boolean(WEBHOOK_URL);
   disableSubmit(form, true);
 
-  const sendPromise = WEBHOOK_URL
-    ? sendViaWebhook(formType, payload).then((response) => {
-        if (!response.ok) {
-          throw new Error('Réponse serveur invalide');
-        }
-      })
-    : sendViaMailto(subject, body, payload.replyTo);
+  if (!useWebhook) {
+    try {
+      sendViaMailto(subject, body, payload.replyTo);
+      showToast('Votre email est prêt à être envoyé dans votre messagerie.', false);
+      form.reset();
+    } catch (error) {
+      showToast('Impossible d\'ouvrir votre messagerie. Merci de réessayer ou de nous contacter par téléphone.', true);
+    } finally {
+      // Réactive immédiatement le bouton pour éviter un blocage si l'ouverture mailto est annulée.
+      disableSubmit(form, false);
+    }
+    return;
+  }
 
-  sendPromise
-    .then(() => {
-      showToast('Votre demande a bien été préparée.', false);
+  sendViaWebhook(formType, payload)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Réponse serveur invalide');
+      }
+      showToast('Votre demande a bien été envoyée.', false);
       form.reset();
     })
     .catch(() => {
