@@ -4,30 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Réservation TAD – Navette Phoenix</title>
-  <meta name="description" content="Formulaire de réservation du transport à la demande Navette Phoenix pour les communes Terres de Perche et Forêts du Perche." />
-  <meta property="og:title" content="Réservation TAD – Navette Phoenix" />
-  <meta property="og:description" content="Réservez votre navette à la demande Navette Phoenix (5 € par personne)." />
-  <meta property="og:image" content="https://www.navettephoenix.fr/assets/img/logo-phoenix.svg" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Réservation TAD – Navette Phoenix" />
-  <meta name="twitter:description" content="Réservez votre navette à la demande Navette Phoenix (5 € par personne)." />
-  <link rel="canonical" href="https://www.navettephoenix.fr/tad-reservation.html" />
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="description" content="Formulaire de réservation du transport à la demande Navette Phoenix pour les communes Terres de Perche et Forêts du Perche.">
+
+  <!-- SEO / Social -->
+  <link rel="canonical" href="https://navettephoenix.github.io/navette-phoenix-site/tad-reservation.html">
+  <meta property="og:title" content="Réservation TAD – Navette Phoenix">
+  <meta property="og:description" content="Réservez votre navette à la demande Navette Phoenix (5 € par personne).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://navettephoenix.github.io/navette-phoenix-site/tad-reservation.html">
+  <meta property="og:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Réservation TAD – Navette Phoenix">
+  <meta name="twitter:description" content="Réservez votre navette à la demande Navette Phoenix (5 € par personne).">
+  <meta name="twitter:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
+
+  <!-- Assets (chemins relatifs pour GitHub Pages) -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifeste.webmanifest">
+  <link rel="stylesheet" href="actifs/css/styles.css">
+  <script src="actifs/js/main.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
-    <a class="logo" href="/">
-      <img src="/assets/img/logo-phoenix.svg" alt="Navette Phoenix" width="160" height="48">
+    <a class="logo" href="./">
+      <img src="actifs/img/logo-phoenix.svg" alt="Navette Phoenix" width="160" height="48">
     </a>
     <nav class="site-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="/tad-reservation.html" aria-current="page">Réserver TAD</a></li>
-        <li><a href="/devis-hors-secteur.html">Devis hors secteur</a></li>
-        <li><a href="/infos.html">Infos TAD</a></li>
-        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="tad-reservation.html" aria-current="page">Réserver TAD</a></li>
+        <li><a href="devis-hors-secteur.html">Devis hors secteur</a></li>
+        <li><a href="infos.html">Infos TAD</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -45,11 +53,16 @@
           <input id="tad-name" name="nom" type="text" required autocomplete="name" aria-invalid="false">
           <p class="error-message" id="tad-name-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-phone">Téléphone</label>
-          <input id="tad-phone" name="telephone" type="tel" inputmode="tel" pattern="^(?:\\+33|0)\\s?(?:[1-5]|7|6|9)(?:[\\s\\.-]?\\d{2}){4}$" required aria-invalid="false">
+          <!-- Regex FR : +33 ou 0 ; 01–05,06,07,09 ; séparateurs optionnels -->
+          <input id="tad-phone" name="telephone" type="tel" inputmode="tel"
+                 pattern="^(?:\+33|0)\s?(?:[1-5]|7|6|9)(?:[\s\.-]?\d{2}){4}$"
+                 required aria-invalid="false">
           <p class="error-message" id="tad-phone-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-commune">Commune</label>
           <select id="tad-commune" name="commune" required aria-invalid="false">
@@ -98,26 +111,31 @@
           </select>
           <p class="error-message" id="tad-commune-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-depart">Départ</label>
           <input id="tad-depart" name="depart" type="text" required autocomplete="address-line1" aria-invalid="false">
           <p class="error-message" id="tad-depart-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-destination">Destination</label>
           <input id="tad-destination" name="destination" type="text" required autocomplete="address-line1" aria-invalid="false">
           <p class="error-message" id="tad-destination-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-date">Date</label>
           <input id="tad-date" name="date" type="date" required aria-invalid="false">
           <p class="error-message" id="tad-date-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-time">Heure</label>
           <input id="tad-time" name="heure" type="time" required aria-invalid="false">
           <p class="error-message" id="tad-time-error" role="alert"></p>
         </div>
+
         <div class="form-group">
           <label for="tad-passengers">Passagers</label>
           <select id="tad-passengers" name="passagers" required aria-invalid="false">
@@ -129,6 +147,7 @@
           </select>
           <p class="error-message" id="tad-passengers-error" role="alert"></p>
         </div>
+
         <div class="form-actions">
           <button type="submit" class="btn-primary">Envoyer</button>
           <button type="button" class="btn-secondary" data-map-trigger="destination">Voir sur la carte</button>
@@ -149,6 +168,5 @@
       <p>Version : v1.18</p>
     </div>
   </footer>
-  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
