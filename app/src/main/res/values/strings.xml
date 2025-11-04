@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Navette Phoenix</string>
+    <string name="app_tagline">Votre mobilité en milieu rural, simplifiée.</string>
+    <string name="google_maps_key" translatable="false">AIzaSyAekHAb1DLfxQKc7oMZsNEZ-SyQKnFMUmg</string>
+
+    <string name="cta_tad">TAD – RÉSERVATION (5 €)</string>
+    <string name="cta_devis">DEVIS HORS SECTEUR</string>
+    <string name="cta_infos">INFOS TAD</string>
+    <string name="cta_zone_gares">ZONE &amp; GARES</string>
+    <string name="cta_contact">CONTACT</string>
+    <string name="cta_privacy">POLITIQUE DE CONFIDENTIALITÉ</string>
+    <string name="cta_sos">SOS 112</string>
+
+    <string name="title_tad_reservation">TAD – Réservation (5 €)</string>
+    <string name="label_name">Nom</string>
+    <string name="label_phone_fr">Téléphone (France)</string>
+    <string name="label_email_optional">Email (optionnel)</string>
+    <string name="label_commune">Commune</string>
+    <string name="label_depart">Lieu de prise en charge</string>
+    <string name="label_destination">Lieu de dépose</string>
+    <string name="label_date">Date</string>
+    <string name="label_time">Heure</string>
+    <string name="label_passengers">Passagers</string>
+    <string name="price_per_seat_notice">Tarif estimé : 5 € × %1$d = %2$s € par siège (TAD).</string>
+    <string name="action_view_on_map">Voir sur la carte</string>
+    <string name="action_send">Envoyer la demande</string>
+    <string name="banner_after_send">Après envoi, un conseiller vous rappelle sous 2 h pour confirmer l’horaire.</string>
+
+    <string name="title_devis">Devis hors secteur</string>
+    <string name="devis_subtitle">France, Paris, gares, aéroports</string>
+    <string name="field_nom">Nom</string>
+    <string name="field_tel">Téléphone (France)</string>
+    <string name="field_email">Email</string>
+    <string name="field_depart">Départ</string>
+    <string name="field_destination">Destination</string>
+    <string name="field_date">Date</string>
+    <string name="field_heure">Heure</string>
+    <string name="field_passagers">Passagers</string>
+    <string name="field_option">Option</string>
+    <string name="action_envoyer">Envoyer</string>
+    <string name="cta_voir_carte">Voir sur la carte</string>
+    <string name="banner_after_send_devis">Un conseiller vous rappelle sous 2 h avec un devis.</string>
+
+    <string name="title_infos">Infos TAD</string>
+    <string name="banner_perimetre">Périmètre : Terres de Perche &amp; Forêts du Perche</string>
+    <string name="banner_gares">Gares desservies : La Loupe &amp; Verneuil-sur-Avre</string>
+    <string name="info_paragraph">TAD : 5 € / personne – véhicule 1–4 places. Lundi–Samedi 9h–19h.</string>
+    <string name="link_demande_devis">Demande de devis</string>
+    <string name="label_communes_couvertes">Communes couvertes</string>
+
+    <string name="title_contact">Contact</string>
+    <string name="label_renseignements">Renseignements</string>
+    <string name="label_reservations">Réservations</string>
+    <string name="label_email">Email</string>
+    <string name="tel_infos">06 85 70 43 36</string>
+    <string name="tel_resa">06 52 75 82 86</string>
+    <string name="mail_resa_to" translatable="false">caro.resanavettephoenix@gmail.com</string>
+    <string name="mail_cc" translatable="false">phoenix.lts28@gmail.com</string>
+    <string name="subject_contact" translatable="false">Contact Navette Phoenix</string>
+    <string name="subject_resa" translatable="false">Réservation Navette Phoenix</string>
+    <string name="subject_devis" translatable="false">Devis Navette Phoenix</string>
+
+    <string name="privacy_url" translatable="false">https://www.navettephoenix.fr/confidentialite.html</string>
+    <string name="site_url" translatable="false">https://www.navettephoenix.fr/</string>
+    <string name="gare_default">Gare de La Loupe</string>
+
+    <string name="content_logo">Logo Navette Phoenix</string>
+    <string name="content_banner">Information Navette Phoenix</string>
+    <string name="toast_invalid_phone">Merci de saisir un numéro français valide.</string>
+    <string name="toast_missing_fields">Merci de compléter les champs obligatoires.</string>
+    <string name="toast_network_error">Impossible d’envoyer la demande. Vérifiez votre connexion.</string>
+    <string name="toast_request_sent">Demande envoyée.</string>
+    <string name="toast_request_processing">Envoi en cours…</string>
+    <string name="toast_invalid_email">Merci de saisir un email valide.</string>
+    <string name="toast_invalid_passengers">Merci de sélectionner le nombre de passagers.</string>
+    <string name="toast_pick_date">Merci de sélectionner une date.</string>
+    <string name="toast_pick_time">Merci de sélectionner une heure.</string>
+    <string name="toast_phone_required">Le téléphone est obligatoire.</string>
+</resources>
