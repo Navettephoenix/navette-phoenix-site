@@ -1,0 +1,9 @@
+<resources>
+    <color name="phoenix_orange">#FF7A00</color>
+    <color name="phoenix_orange_dark">#E56D00</color>
+    <color name="phoenix_bg">#121212</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="text_primary">#111111</color>
+    <color name="text_secondary">#666666</color>
+</resources>
