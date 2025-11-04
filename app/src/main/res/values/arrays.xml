@@ -1,0 +1,103 @@
+<resources>
+    <string-array name="passagers_1_4">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="gares_perimetre">
+        <item>Gare de La Loupe</item>
+        <item>Gare de Verneuil-sur-Avre</item>
+    </string-array>
+
+    <string-array name="communes_terres_de_perche">
+        <item>Belhomert-Guéhouville</item>
+        <item>Champrond-en-Gâtine</item>
+        <item>Chassant</item>
+        <item>Combres</item>
+        <item>Corvées-les-Yys</item>
+        <item>Coudreceau</item>
+        <item>La Croix-du-Perche</item>
+        <item>Fontaine-Simon</item>
+        <item>Frazé</item>
+        <item>Frétigny</item>
+        <item>Happonvilliers</item>
+        <item>La Loupe</item>
+        <item>Manou</item>
+        <item>Marolles-les-Buis</item>
+        <item>Meaucé</item>
+        <item>Montireau</item>
+        <item>Montlandon</item>
+        <item>Nonvilliers-Grandhoux</item>
+        <item>Saint-Éliphe</item>
+        <item>Saint-Maurice-Saint-Germain</item>
+        <item>Saint-Victor-de-Buthon</item>
+        <item>Thiron-Gardais</item>
+    </string-array>
+
+    <string-array name="communes_forets_du_perche">
+        <item>Boissy-lès-Perche</item>
+        <item>La Chapelle-Fortin</item>
+        <item>Digny</item>
+        <item>La Ferté-Vidame</item>
+        <item>La Framboisière</item>
+        <item>Jaudrais</item>
+        <item>Lamblore</item>
+        <item>Louvilliers-lès-Perche</item>
+        <item>Le Mesnil-Thomas</item>
+        <item>Morvilliers</item>
+        <item>La Puisaye</item>
+        <item>Les Ressuintes</item>
+        <item>Rohaire</item>
+        <item>La Saucelle</item>
+        <item>Senonches</item>
+    </string-array>
+
+    <string-array name="communes_perimetre">
+        <item>Belhomert-Guéhouville</item>
+        <item>Champrond-en-Gâtine</item>
+        <item>Chassant</item>
+        <item>Combres</item>
+        <item>Corvées-les-Yys</item>
+        <item>Coudreceau</item>
+        <item>La Croix-du-Perche</item>
+        <item>Fontaine-Simon</item>
+        <item>Frazé</item>
+        <item>Frétigny</item>
+        <item>Happonvilliers</item>
+        <item>La Loupe</item>
+        <item>Manou</item>
+        <item>Marolles-les-Buis</item>
+        <item>Meaucé</item>
+        <item>Montireau</item>
+        <item>Montlandon</item>
+        <item>Nonvilliers-Grandhoux</item>
+        <item>Saint-Éliphe</item>
+        <item>Saint-Maurice-Saint-Germain</item>
+        <item>Saint-Victor-de-Buthon</item>
+        <item>Thiron-Gardais</item>
+        <item>Boissy-lès-Perche</item>
+        <item>La Chapelle-Fortin</item>
+        <item>Digny</item>
+        <item>La Ferté-Vidame</item>
+        <item>La Framboisière</item>
+        <item>Jaudrais</item>
+        <item>Lamblore</item>
+        <item>Louvilliers-lès-Perche</item>
+        <item>Le Mesnil-Thomas</item>
+        <item>Morvilliers</item>
+        <item>La Puisaye</item>
+        <item>Les Ressuintes</item>
+        <item>Rohaire</item>
+        <item>La Saucelle</item>
+        <item>Senonches</item>
+    </string-array>
+
+    <string-array name="options_devis">
+        <item>Paris</item>
+        <item>Gares</item>
+        <item>Aéroports</item>
+        <item>Autre précision</item>
+    </string-array>
+</resources>
