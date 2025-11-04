@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">Navette Phoenix</string>
+    <string name="app_tagline">Votre mobilité en milieu rural, simplifiée.</string>
+    <string name="google_maps_key" translatable="false">AIzaSyAekHAb1DLfxQKc7oMZsNEZ-SyQKnFMUmg</string>
+
+    <string name="cta_tad">TAD – RÉSERVATION (5 €)</string>
+    <string name="cta_devis">DEVIS HORS SECTEUR</string>
+    <string name="cta_infos">INFOS TAD</string>
+    <string name="cta_zone_gares">ZONE &amp; GARES</string>
+    <string name="cta_contact">CONTACT</string>
+    <string name="cta_privacy">POLITIQUE DE CONFIDENTIALITÉ</string>
+    <string name="cta_sos">SOS 112</string>
+
+    <string name="title_tad_reservation">TAD – Réservation (5 €)</string>
+    <string name="label_name">Nom</string>
+    <string name="label_phone_fr">Téléphone (France)</string>
+    <string name="label_email_optional">Email (optionnel)</string>
+    <string name="label_commune">Commune</string>
+    <string name="label_depart">Lieu de prise en charge</string>
+    <string name="label_destination">Lieu de dépose</string>
+    <string name="label_date">Date</string>
+    <string name="label_time">Heure</string>
+    <string name="label_passengers">Passagers</string>
+    <string name="price_per_seat_notice">Tarif estimé : 5 € × %1$s = %2$s € par siège (TAD).</string>
+    <string name="action_view_on_map">Voir sur la carte</string>
+    <string name="action_send">Envoyer</string>
+    <string name="banner_after_send">Après envoi, un conseiller vous rappelle sous 2 h pour confirmer l’horaire.</string>
+
+    <string name="title_devis">Devis hors secteur</string>
+    <string name="field_nom">Nom</string>
+    <string name="field_tel">Téléphone (France)</string>
+    <string name="field_email">Email</string>
+    <string name="field_depart">Départ</string>
+    <string name="field_destination">Destination</string>
+    <string name="field_date">Date</string>
+    <string name="field_heure">Heure</string>
+    <string name="field_passagers">Passagers</string>
+    <string name="field_option">Option</string>
+    <string name="action_envoyer">Envoyer</string>
+    <string name="cta_voir_carte">Voir sur la carte</string>
+    <string name="banner_after_send_devis">Un conseiller vous rappelle sous 2 h avec un devis.</string>
+
+    <string name="title_infos">Infos TAD</string>
+    <string name="banner_perimetre">Périmètre : Terres de Perche &amp; Forêts du Perche</string>
+    <string name="banner_gares">Gares desservies : La Loupe &amp; Verneuil-sur-Avre</string>
+    <string name="paragraph_tad">TAD : 5 € / personne – véhicule 1–4 places. Lundi–Samedi 9h–19h.</string>
+    <string name="cta_request_quote">Demande de devis</string>
+    <string name="section_zone_title">Zone &amp; gares</string>
+    <string name="section_zone_description">Retrouvez les gares accessibles et le périmètre complet du service.</string>
+
+    <string name="title_contact">Contact</string>
+    <string name="label_renseignements">Renseignements</string>
+    <string name="label_reservations">Réservations</string>
+    <string name="label_email">Email</string>
+    <string name="label_site">Site web</string>
+    <string name="label_phone_action">Appeler</string>
+    <string name="label_email_action">Envoyer un email</string>
+    <string name="label_site_action">Ouvrir le site</string>
+
+    <string name="tel_infos" translatable="false">0685704336</string>
+    <string name="tel_resa" translatable="false">0652758286</string>
+    <string name="tel_infos_display" translatable="false">06 85 70 43 36</string>
+    <string name="tel_resa_display" translatable="false">06 52 75 82 86</string>
+    <string name="mail_resa_to" translatable="false">caro.resanavettephoenix@gmail.com</string>
+    <string name="mail_cc" translatable="false">phoenix.lts28@gmail.com</string>
+    <string name="mail_resa_display" translatable="false">caro.resanavettephoenix@gmail.com</string>
+    <string name="subject_contact" translatable="false">Contact Navette Phoenix</string>
+    <string name="subject_resa" translatable="false">Réservation Navette Phoenix</string>
+    <string name="subject_devis" translatable="false">Demande de devis Navette Phoenix</string>
+
+    <string name="privacy_url" translatable="false">https://www.navettephoenix.fr/confidentialite.html</string>
+    <string name="site_url" translatable="false">https://www.navettephoenix.fr/</string>
+    <string name="gare_default" translatable="false">Gare de La Loupe</string>
+    <string name="title_privacy">Politique de confidentialité</string>
+
+    <string name="content_description_logo">Logo Navette Phoenix</string>
+    <string name="content_description_banner">Informations principales</string>
+    <string name="content_description_contact_card">Carte de contact</string>
+
+    <string name="error_required">Ce champ est requis.</string>
+    <string name="error_phone">Merci de saisir un numéro français valide.</string>
+    <string name="error_email">Merci de saisir un email valide.</string>
+    <string name="error_commune">Merci de sélectionner une commune du périmètre.</string>
+    <string name="message_configure_webhook">Veuillez configurer le webhook Apps Script avant l’envoi.</string>
+    <string name="message_send_success">Formulaire envoyé avec succès.</string>
+    <string name="message_send_failed">L’envoi a échoué. Merci de réessayer.</string>
+    <string name="message_map_destination_required">Renseignez une destination avant d’ouvrir la carte.</string>
+    <string name="message_map_depart_required">Renseignez une destination pour afficher la carte.</string>
