@@ -1,117 +1,567 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Navette Phoenix – Mobilité rurale simplifiée</title>
-  <meta name="description" content="Navette Phoenix propose un service de transport à la demande 5 € pour les communes du Perche et des trajets personnalisés hors secteur." />
-
-  <!-- SEO / Social -->
-  <link rel="canonical" href="https://navettephoenix.github.io/navette-phoenix-site/">
-  <meta property="og:title" content="Navette Phoenix – Votre mobilité en milieu rural, simplifiée.">
-  <meta property="og:description" content="Réservez votre navette à la demande 5 € ou demandez un devis hors secteur avec Navette Phoenix.">
-  <meta property="og:url" content="https://navettephoenix.github.io/navette-phoenix-site/">
-  <meta property="og:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Navette Phoenix">
-  <meta name="twitter:description" content="Votre mobilité en milieu rural, simplifiée.">
-  <meta name="twitter:image" content="https://navettephoenix.github.io/navette-phoenix-site/actifs/img/logo-phoenix.svg">
-
-  <!-- Assets (chemins relatifs pour GitHub Pages) -->
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="manifeste.webmanifest">
-  <link rel="stylesheet" href="actifs/css/styles.css">
-  <script src="actifs/js/main.js" defer></script>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Navette Phoenix",
-    "url": "https://navettephoenix.github.io/navette-phoenix-site/",
-    "telephone": ["+33685704336", "+33652758286"],
-    "areaServed": {
-      "@type": "Place",
-      "name": "Terres de Perche et Forêts du Perche"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phoenix Mobilité | Plateforme premium de mobilité rurale</title>
+  <meta name="description" content="Phoenix Mobilité est une plateforme professionnelle de mobilité rurale. Navette Phoenix en constitue le premier déploiement réel, avec réservation usager, pilotage opérateur et logique d'exploitation terrain." />
+  <meta name="theme-color" content="#0b1b33" />
+  <style>
+    :root {
+      --bg: #f4f6fa;
+      --surface: #ffffff;
+      --surface-2: #f8fafc;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #dbe3f0;
+      --brand: #0d2347;
+      --brand-2: #173a73;
+      --accent: #d6873b;
+      --success: #1f7a4d;
+      --radius: 16px;
+      --shadow: 0 12px 40px rgba(11, 27, 51, 0.09);
+      --max: 1160px;
     }
-  }
-  </script>
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top right, #e8eef9 0, #f4f6fa 42%, #f4f6fa 100%);
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.4rem));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      backdrop-filter: blur(10px);
+      background: rgba(244, 246, 250, 0.86);
+      border-bottom: 1px solid rgba(13, 35, 71, 0.08);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      color: var(--brand);
+      font-weight: 750;
+      letter-spacing: .15px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(140deg, var(--brand), var(--brand-2));
+      color: #fff;
+      font-weight: 700;
+      font-size: .92rem;
+      box-shadow: 0 8px 20px rgba(13, 35, 71, .25);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.1rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 560;
+      font-size: .95rem;
+    }
+
+    nav a:hover { color: var(--brand); }
+
+    .hero {
+      padding: 5.4rem 0 3.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap: 1.6rem;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side {
+      background: var(--surface);
+      border-radius: calc(var(--radius) + 2px);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(13, 35, 71, .06);
+      padding: clamp(1.3rem, 2.6vw, 2.2rem);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      background: rgba(13, 35, 71, .06);
+      color: var(--brand);
+      border-radius: 999px;
+      padding: .38rem .78rem;
+      font-size: .82rem;
+      font-weight: 650;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { line-height: 1.2; margin: 0 0 .8rem; letter-spacing: -.01em; }
+
+    h1 { font-size: clamp(1.9rem, 4vw, 3rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 2.1rem); }
+    h3 { font-size: 1.05rem; }
+
+    .lead {
+      font-size: clamp(1.02rem, 1.7vw, 1.2rem);
+      color: #243046;
+      margin: 0;
+    }
+
+    .hero-cta {
+      margin-top: 1.35rem;
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      padding: .8rem 1.08rem;
+      border-radius: 11px;
+      text-decoration: none;
+      font-weight: 650;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+      box-shadow: 0 8px 24px rgba(13, 35, 71, .24);
+    }
+
+    .btn-secondary {
+      color: var(--brand);
+      background: #fff;
+      border-color: rgba(13, 35, 71, .16);
+    }
+
+    .hero-side p { color: var(--muted); margin: .35rem 0; }
+
+    .price-list {
+      margin-top: .95rem;
+      border-top: 1px solid var(--line);
+      padding-top: .85rem;
+      display: grid;
+      gap: .5rem;
+      font-size: .97rem;
+    }
+
+    .price-list strong { color: var(--brand); }
+
+    section.section {
+      padding: 1.2rem 0 1.8rem;
+    }
+
+    .section-head {
+      margin-bottom: 1rem;
+      max-width: 820px;
+    }
+
+    .section-head p { margin: 0; color: var(--muted); }
+
+    .grid-3,
+    .grid-2,
+    .value-grid,
+    .feature-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .feature-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .value-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(13, 35, 71, .08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1rem 1.05rem;
+    }
+
+    .card p { margin: .4rem 0 0; color: var(--muted); font-size: .96rem; }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: .5rem;
+      font-size: .76rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--brand-2);
+      font-weight: 700;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1rem;
+      margin: 0;
+      list-style: none;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: .25rem;
+      bottom: .25rem;
+      width: 2px;
+      background: linear-gradient(var(--brand), var(--accent));
+      border-radius: 2px;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 0 0 .95rem 1rem;
+      color: var(--muted);
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -0.18rem;
+      top: .35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 4px rgba(23, 58, 115, .14);
+    }
+
+    .quote {
+      background: linear-gradient(130deg, #0d2347, #122f5f);
+      color: #f7f8fb;
+      border-radius: calc(var(--radius) + 3px);
+      padding: 1.2rem;
+      box-shadow: 0 14px 38px rgba(13, 35, 71, .34);
+    }
+
+    .quote p { margin: 0; color: rgba(247, 248, 251, .93); }
+
+    .contact {
+      margin-top: .5rem;
+      background: var(--surface);
+      border: 1px solid rgba(13, 35, 71, .08);
+      border-radius: calc(var(--radius) + 2px);
+      box-shadow: var(--shadow);
+      padding: clamp(1.15rem, 2.2vw, 1.9rem);
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .contact-list {
+      margin: .55rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .35rem;
+    }
+
+    .contact-list a { color: var(--brand); text-decoration: none; }
+
+    .contact-list a:hover { text-decoration: underline; }
+
+    .fine {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: .8rem;
+    }
+
+    footer {
+      padding: 1.4rem 0 2.2rem;
+      color: #516078;
+      font-size: .9rem;
+    }
+
+    .footer-inner {
+      border-top: 1px solid var(--line);
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .45s ease, transform .45s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .contact,
+      .grid-3,
+      .feature-grid,
+      .value-grid { grid-template-columns: 1fr 1fr; }
+
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner { align-items: flex-start; padding: .65rem 0; }
+      nav ul { gap: .7rem .9rem; }
+      .hero { padding-top: 4.5rem; }
+      .hero-grid,
+      .grid-3,
+      .feature-grid,
+      .value-grid,
+      .contact { grid-template-columns: 1fr; }
+      .hero-cta .btn { width: 100%; }
+    }
+  </style>
 </head>
-
 <body>
-  <header class="site-header">
-    <a class="logo" href="./">
-      <img src="actifs/img/logo-phoenix.svg" alt="Navette Phoenix" width="96" height="96">
-    </a>
-
-    <nav class="site-nav" aria-label="Navigation principale">
-      <ul>
-        <li><a href="tad-reservation.html">Réserver TAD</a></li>
-        <li><a href="devis-hors-secteur.html">Devis hors secteur</a></li>
-        <li><a href="infos.html">Infos TAD</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="topbar" aria-label="Navigation principale">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top" aria-label="Phoenix Mobilité">
+        <span class="brand-mark">PM</span>
+        <span>Phoenix Mobilité</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#vision">Vision</a></li>
+          <li><a href="#plateforme">Plateforme</a></li>
+          <li><a href="#demonstrateur">Démonstrateur</a></li>
+          <li><a href="#evolution">Évolution</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <h1 id="hero-title">Votre mobilité en milieu rural, simplifiée.</h1>
-        <p>Navette Phoenix connecte les communes du Perche à leurs gares et services essentiels grâce à un transport à la demande accessible.</p>
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-grid">
+        <article class="hero-main reveal">
+          <span class="kicker">Plateforme technologique de mobilité rurale</span>
+          <h1>Phoenix Mobilité structure la mobilité rurale pour une exploitation réelle, fiable et extensible.</h1>
+          <p class="lead">Pensée comme une plateforme professionnelle et non comme une simple application, Phoenix Mobilité réunit l'expérience usager, le traitement des demandes et le pilotage opérateur dans une architecture modulaire prête à monter en puissance.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Demander une démonstration</a>
+            <a class="btn btn-secondary" href="https://www.navettephoenix.fr" target="_blank" rel="noopener">Voir Navette Phoenix</a>
+          </div>
+        </article>
+        <aside class="hero-side reveal" aria-label="Repères opérationnels">
+          <span class="badge">Premier déploiement concret</span>
+          <h2>Navette Phoenix</h2>
+          <p>Navette Phoenix constitue le premier cas d'usage opérationnel de la plateforme : réservation usager, traitement de demande, suivi des courses et synthèse opérateur.</p>
+          <div class="price-list">
+            <div><strong>Transport à la demande (TAD)</strong> — 5 € / personne</div>
+            <div><strong>Trajet spécifique étendu</strong> — 10 € / personne</div>
+            <div><strong>Hors secteur</strong> — Sur devis</div>
+          </div>
+          <p class="fine">Positionnement public : service accessible, cadre tarifaire clair, logique d'exploitation terrain.</p>
+        </aside>
+      </div>
+    </section>
 
-        <div class="cta-group" role="group" aria-label="Actions principales">
-          <a class="btn-primary" href="tad-reservation.html">TAD – 5 € (Réserver)</a>
-          <a class="btn-primary" href="devis-hors-secteur.html">Hors Secteur – Devis</a>
-          <a class="btn-secondary" href="infos.html">Infos TAD</a>
-          <a class="btn-secondary" href="infos.html#zone-gares">Zone &amp; Gares</a>
-          <a class="btn-secondary" href="contact.html">Contact</a>
-          <a class="btn-secondary" href="confidentialite.html">Politique de confidentialité</a>
-          <a class="btn-alert" href="tel:112">SOS 112</a>
+    <section id="vision" class="section container reveal">
+      <div class="section-head">
+        <h2>Pourquoi Phoenix Mobilité existe</h2>
+        <p>Dans les territoires ruraux, la mobilité est un sujet d'accès aux services, à l'emploi et aux gares. Phoenix Mobilité répond à cette réalité avec une approche structurée : un socle logiciel fiable, directement orienté exploitation et coordination quotidienne.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Enjeu terrain concret</h3>
+          <p>Rendre les déplacements possibles même en zone peu dense, avec des règles lisibles pour l'usager et l'opérateur.</p>
+        </article>
+        <article class="card">
+          <h3>Réponse produit</h3>
+          <p>Une plateforme qui organise la chaîne complète : demande, validation, suivi, lecture de l'activité et pilotage.</p>
+        </article>
+        <article class="card">
+          <h3>Ambition maîtrisée</h3>
+          <p>Partir d'un cas réel déjà actif pour bâtir une solution déployable sur d'autres territoires et structures.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="plateforme" class="section container reveal">
+      <div class="section-head">
+        <h2>Une plateforme pensée pour l'usage réel</h2>
+        <p>Phoenix Mobilité articule l'interface usager, un backend de traitement opérationnel et un espace de pilotage opérateur. L'objectif est simple : fiabiliser l'exploitation quotidienne tout en préparant la croissance.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="card">
+          <h3>Réservation usager</h3>
+          <p>Parcours lisible pour formuler les demandes de transport à la demande et hors secteur.</p>
+        </article>
+        <article class="card">
+          <h3>Traitement des demandes</h3>
+          <p>Validation opérationnelle, consolidation des demandes et synchronisation des réservations.</p>
+        </article>
+        <article class="card">
+          <h3>Espace opérateur</h3>
+          <p>Vision quotidienne des réservations, des statuts et des points de vigilance terrain.</p>
+        </article>
+        <article class="card">
+          <h3>Synthèse d'exploitation</h3>
+          <p>Tableau de lecture permettant de suivre l'activité et d'améliorer l'organisation locale.</p>
+        </article>
+        <article class="card">
+          <h3>Base technique évolutive</h3>
+          <p>Application Android native, backend opérationnel et architecture modulaire orientée montée en charge.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="demonstrateur" class="section container reveal">
+      <div class="grid-2">
+        <article class="card">
+          <span class="badge">Démonstrateur en exploitation</span>
+          <h2>Navette Phoenix : preuve d'usage et de robustesse</h2>
+          <p>Le premier déploiement de Phoenix Mobilité fonctionne dans un cadre réel, avec une offre de mobilité ciblée et des processus déjà opérationnels. Ce démonstrateur valide la capacité du socle à répondre à des besoins concrets de territoires.</p>
+          <ul class="timeline">
+            <li>Service orienté mobilité rurale et accès aux services essentiels.</li>
+            <li>Canal de réservation actif et suivi structuré des demandes.</li>
+            <li>Pilotage opérateur quotidien avec logique de synthèse.</li>
+          </ul>
+        </article>
+        <aside class="quote">
+          <p><strong>Phoenix Mobilité</strong> n'est pas une promesse théorique : c'est une base déjà en service, conçue pour être répliquée, adaptée et industrialisée progressivement.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container reveal">
+      <div class="section-head">
+        <h2>Valeur pour les acteurs publics et opérateurs</h2>
+        <p>La plateforme est conçue pour offrir un cadre clair de déploiement, de suivi et d'amélioration continue.</p>
+      </div>
+      <div class="value-grid">
+        <article class="card">
+          <h3>Collectivités</h3>
+          <p>Un outil crédible pour structurer et piloter une réponse de mobilité locale sur des zones rurales.</p>
+        </article>
+        <article class="card">
+          <h3>Opérateurs</h3>
+          <p>Une logique d'exploitation pragmatique, avec visibilité sur les demandes et les opérations terrain.</p>
+        </article>
+        <article class="card">
+          <h3>Territoires</h3>
+          <p>Une base adaptable aux spécificités locales, sans repartir de zéro à chaque nouveau contexte.</p>
+        </article>
+        <article class="card">
+          <h3>Partenaires & investisseurs</h3>
+          <p>Un produit déjà engagé dans le réel, avec une trajectoire claire vers un modèle plateforme.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="evolution" class="section container reveal">
+      <div class="section-head">
+        <h2>Trajectoire de croissance de la plateforme</h2>
+        <p>Phoenix Mobilité est construite pour évoluer vers une logique multi-clients, configurable et potentiellement SaaS, tout en conservant une exigence de fiabilité opérationnelle.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Configurable</h3>
+          <p>Paramétrage progressif des règles de service selon les territoires, opérateurs et contraintes locales.</p>
+        </article>
+        <article class="card">
+          <h3>Marque blanche & multi-clients</h3>
+          <p>Capacité à adapter l'identité et l'exploitation pour d'autres structures sans refonte complète.</p>
+        </article>
+        <article class="card">
+          <h3>Industrialisation</h3>
+          <p>Extension du back-office, standardisation des processus et montée en puissance contrôlée.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container reveal">
+      <div class="contact">
+        <div>
+          <span class="badge">Contact & démonstration</span>
+          <h2>Échanger avec l'équipe Navette Phoenix</h2>
+          <p>Phoenix Mobilité est déjà active sur un premier cas réel. Pour une démonstration, un échange institutionnel ou une projection de déploiement, vous pouvez contacter directement Navette Phoenix.</p>
+          <ul class="contact-list">
+            <li><strong>Réservations :</strong> <a href="tel:+33652758286">06 52 75 82 86</a></li>
+            <li><strong>Renseignements :</strong> <a href="tel:+33685704336">06 85 70 43 36</a></li>
+            <li><strong>Email :</strong> <a href="mailto:caro.resanavettephoenix@gmail.com">caro.resanavettephoenix@gmail.com</a></li>
+            <li><strong>Site :</strong> <a href="https://www.navettephoenix.fr" target="_blank" rel="noopener">www.navettephoenix.fr</a></li>
+          </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="features" aria-label="Avantages Navette Phoenix">
-      <div class="feature-card">
-        <h2>Transport à la demande 5 €</h2>
-        <p>Vos déplacements locaux du lundi au samedi, de 9h à 19h, pour 1 à 4 personnes.</p>
-      </div>
-      <div class="feature-card">
-        <h2>Communes desservies</h2>
-        <p>Terres de Perche &amp; Forêts du Perche, avec départ possible vers les gares de La Loupe et Verneuil-sur-Avre.</p>
-      </div>
-      <div class="feature-card">
-        <h2>Réservation simplifiée</h2>
-        <p>Contact direct par email ou téléphone avec un suivi personnalisé.</p>
-      </div>
-    </section>
-
-    <section class="contact-banner" aria-label="Contact rapide">
-      <div>
-        <h2>Besoin d'aide immédiate ?</h2>
-        <p>Renseignements : <a href="tel:+33685704336">06 85 70 43 36</a></p>
-        <p>Réservations : <a href="tel:+33652758286">06 52 75 82 86</a></p>
-      </div>
-      <div>
-        <a class="btn-primary" href="mailto:caro.resanavettephoenix@gmail.com?cc=phoenix.lts28@gmail.com">Écrire à Navette Phoenix</a>
+        <div>
+          <a class="btn btn-primary" href="mailto:caro.resanavettephoenix@gmail.com?subject=Demande%20de%20d%C3%A9monstration%20-%20Phoenix%20Mobilit%C3%A9">Planifier un échange</a>
+          <p class="fine">Phoenix Mobilité (plateforme) · Navette Phoenix (premier déploiement concret).</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div>
-      <p><strong>Navette Phoenix</strong></p>
-      <p>Tél. renseignements : <a href="tel:+33685704336">06 85 70 43 36</a></p>
-      <p>Tél. réservations : <a href="tel:+33652758286">06 52 75 82 86</a></p>
-      <p>Email : <a href="mailto:caro.resanavettephoenix@gmail.com?cc=phoenix.lts28@gmail.com">caro.resanavettephoenix@gmail.com</a></p>
-    </div>
-    <div class="footer-meta">
-      <p>Site : <a href="https://www.navettephoenix.fr/">www.navettephoenix.fr</a></p>
-      <p>Version : v1.18</p>
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>Phoenix Mobilité</strong> — Plateforme de mobilité rurale professionnelle.
+      </div>
+      <div>
+        Démonstrateur opérationnel : <strong>Navette Phoenix</strong>.
+      </div>
     </div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
